@@ -5,16 +5,16 @@ Contains the FileStorage class for the AidAlley project
 
 import json
 from models.base_model import BaseModel
-# from models.volunteer import Volunteer
-# from models.event import Event
+from models.volunteer import Volunteer
+from models.event import Event
 # from models.volunteer_hours import VolunteerHours
 # from models.event_volunteer import EventVolunteer
 # from models.notification import Notification
 
 classes = {
     "BaseModel": BaseModel,
-    # "Volunteer": Volunteer,
-    # "Event": Event,
+    "Volunteer": Volunteer,
+    "Event": Event,
     # "VolunteerHours": VolunteerHours,
     # "EventVolunteer": EventVolunteer,
     # "Notification": Notification
@@ -61,6 +61,8 @@ class FileStorage:
                         obj.created_at = datetime.fromisoformat(obj.created_at)
                     if isinstance(obj.updated_at, str):
                         obj.updated_at = datetime.fromisoformat(obj.updated_at)
+                    if class_name == 'Event' and isinstance(obj.date, str):
+                        obj.date = datetime.fromisoformat(obj.date)
                     self.__objects[key] = obj
         except FileNotFoundError:
             pass
