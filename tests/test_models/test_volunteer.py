@@ -9,6 +9,7 @@ import inspect
 import pycodestyle
 import unittest
 
+
 class TestVolunteerDocs(unittest.TestCase):
     """Tests to check the documentation and style of Volunteer class"""
 
