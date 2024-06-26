@@ -3,6 +3,7 @@
 
 from models.base_model import BaseModel
 
+
 class Notification(BaseModel):
     """Represents a Notification"""
     volunteer_id = ""
