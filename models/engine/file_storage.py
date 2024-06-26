@@ -7,17 +7,17 @@ import json
 from models.base_model import BaseModel
 from models.volunteer import Volunteer
 from models.event import Event
-# from models.volunteer_hours import VolunteerHours
-# from models.event_volunteer import EventVolunteer
-# from models.notification import Notification
+from models.volunteer_hours import VolunteerHours
+from models.event_volunteer import EventVolunteer
+from models.notification import Notification
 
 classes = {
     "BaseModel": BaseModel,
     "Volunteer": Volunteer,
     "Event": Event,
-    # "VolunteerHours": VolunteerHours,
-    # "EventVolunteer": EventVolunteer,
-    # "Notification": Notification
+    "VolunteerHours": VolunteerHours,
+    "EventVolunteer": EventVolunteer,
+    "Notification": Notification
 }
 
 
