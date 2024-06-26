@@ -41,3 +41,11 @@ print("---checked if instances are the same---")
 print("saving instance")
 new_instance.save()
 print("saved instance")
+
+# Reload storage from file
+print("---reloading storage---")
+all_obj = storage.all()
+for obj_id in all_obj.keys():
+    obj = all_obj[obj_id]
+    print(obj)
+print("---storage reloaded---")
