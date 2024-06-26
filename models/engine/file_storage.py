@@ -5,11 +5,11 @@ Contains the FileStorage class for the AidAlley project
 
 import json
 from models.base_model import BaseModel
-from models.volunteer import Volunteer
 from models.event import Event
-from models.volunteer_hours import VolunteerHours
 from models.event_volunteer import EventVolunteer
 from models.notification import Notification
+from models.volunteer import Volunteer
+from models.volunteer_hours import VolunteerHours
 
 classes = {
     "BaseModel": BaseModel,
