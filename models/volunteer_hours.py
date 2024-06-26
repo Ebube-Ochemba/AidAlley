@@ -9,6 +9,7 @@ class VolunteerHours(BaseModel):
     volunteer_id = ""
     event_id = ""
     hours = 0.0
+    verified = False
 
     def __init__(self, *args, **kwargs):
         """Initializes VolunteerHours"""
