@@ -1,25 +1,25 @@
 import json
 import inspect
+import pycodestyle
 import unittest
 from models.base_model import BaseModel
+from models.event import Event
+from models.event_volunteer import EventVolunteer
+from models.notification import Notification
+from models.volunteer import Volunteer
+from models.volunteer_hours import VolunteerHours
 from models.engine.file_storage import FileStorage
-# from models import storage_type
+from models import storage_type
 from uuid import uuid4
-import pycodestyle
 
-# from models.event import Event
-# from models.event_volunteer import EventVolunteer
-# from models.notification import Notification
-# from models.volunteer import Volunteer
-# from models.volunteer_hours import VolunteerHours
 
 classes = {
     "BaseModel": BaseModel,
-    # "Volunteer": Volunteer,
-    # "Event": Event,
-    # "VolunteerHours": VolunteerHours,
-    # "EventVolunteer": EventVolunteer,
-    # "Notification": Notification
+    "Volunteer": Volunteer,
+    "Event": Event,
+    "VolunteerHours": VolunteerHours,
+    "EventVolunteer": EventVolunteer,
+    "Notification": Notification
 }
 
 
@@ -70,7 +70,7 @@ class TestFileStorageDocs(unittest.TestCase):
 
 class TestFileStorage(unittest.TestCase):
     """Test the FileStorage class"""
-    # @unittest.skipIf(storage_type == 'db', "not testing file storage")
+    @unittest.skipIf(storage_type == 'db', "not testing file storage")
     def test_all_returns_dict(self):
         """Test that all returns the FileStorage.__objects attr"""
         storage = FileStorage()
@@ -78,7 +78,7 @@ class TestFileStorage(unittest.TestCase):
         self.assertEqual(type(new_dict), dict)
         self.assertIs(new_dict, storage._FileStorage__objects)
 
-    # @unittest.skipIf(storage_type == 'db', "not testing file storage")
+    @unittest.skipIf(storage_type == 'db', "not testing file storage")
     def test_new(self):
         """test that new adds an object to the FileStorage.__objects attr"""
         storage = FileStorage()
@@ -94,7 +94,7 @@ class TestFileStorage(unittest.TestCase):
                 self.assertEqual(test_dict, storage._FileStorage__objects)
         FileStorage._FileStorage__objects = save
 
-    # @unittest.skipIf(storage_type == 'db', "not testing file storage")
+    @unittest.skipIf(storage_type == 'db', "not testing file storage")
     def test_save(self):
         """Test that save properly saves objects to file.json"""
         storage = FileStorage()
@@ -114,7 +114,7 @@ class TestFileStorage(unittest.TestCase):
             js = f.read()
         self.assertEqual(json.loads(string), json.loads(js))
 
-    # @unittest.skipIf(storage_type == 'db', "not testing file storage")
+    @unittest.skipIf(storage_type == 'db', "not testing file storage")
     def test_get(self):
         """ Tests method for obtaining an instance file storage"""
         storage = FileStorage()
