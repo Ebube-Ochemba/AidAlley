@@ -6,7 +6,7 @@ Factory: Chooses the storage engine based on an environment variable.
 from os import getenv
 
 
-storage_type = getenv("STORAGE_TYPE")
+storage_type = getenv("AIDALLEY_STORAGE_TYPE")
 
 if storage_type == 'db':
     from models.engine.db_storage import DBStorage
