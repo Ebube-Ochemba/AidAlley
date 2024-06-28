@@ -1,1 +1,116 @@
-{"BaseModel.317bc962-d864-451d-b60c-43d3d9050fa3": {"id": "317bc962-d864-451d-b60c-43d3d9050fa3", "created_at": "2024-06-28T01:41:11.642591+00:00", "updated_at": "2024-06-28T01:41:11.643275+00:00", "__class__": "BaseModel"}, "BaseModel.a3c8e961-e442-4dd0-a284-f15b8a9054ab": {"id": "a3c8e961-e442-4dd0-a284-f15b8a9054ab", "created_at": "2024-06-28T01:41:13.774625+00:00", "updated_at": "2024-06-28T01:41:13.775290+00:00", "__class__": "BaseModel"}, "Volunteer.ef863017-b1f7-48d8-be80-68a92f681a5b": {"id": "ef863017-b1f7-48d8-be80-68a92f681a5b", "created_at": "2024-06-28T01:41:18.715037+00:00", "updated_at": "2024-06-28T01:41:19.055322+00:00", "first_name": "Walter", "last_name": "White", "email": "heisenberg@me.com", "phone": "555-555-5555", "availability": "Monday, Wednesday, Friday, Sunday", "password": "$2b$12$4Z90F7V1PHny.vBhLil8UOezd9EEaZ9JR/rb60iu6qj7opxb1me/C", "__class__": "Volunteer"}, "Volunteer.6c3bab93-d74f-4d29-9ae8-299fec3960ad": {"id": "6c3bab93-d74f-4d29-9ae8-299fec3960ad", "created_at": "2024-06-28T01:41:19.056022+00:00", "updated_at": "2024-06-28T01:41:19.400902+00:00", "first_name": "Jesse", "last_name": "Pinkman", "email": "jesseblue@me.com", "phone": "222-222-2222", "availability": "Monday, Wednesday, Friday, Sunday", "password": "$2b$12$i8K0b06W3eP8m3mTdyjgcu1ss8C1g5gVp4gEVZEzqu/ln2TFeVmZe", "__class__": "Volunteer"}, "Event.106cf5a3-4433-4621-9a88-e33d5d6e61b9": {"id": "106cf5a3-4433-4621-9a88-e33d5d6e61b9", "created_at": "2024-06-28T01:41:29.441459+00:00", "updated_at": "2024-06-28T01:41:29.441492+00:00", "title": "Community Cleanup", "description": "Join us for a community cleanup event.", "date": "2023-07-01T09:00:00+00:00", "location": "123 Main St, Anytown, USA", "creator_id": "some-creator-uuid", "__class__": "Event"}, "Event.2c268d49-05d8-40b4-beb9-5cbf85788f6e": {"id": "2c268d49-05d8-40b4-beb9-5cbf85788f6e", "created_at": "2024-06-28T01:41:29.442721+00:00", "updated_at": "2024-06-28T01:41:29.442743+00:00", "title": "Tree Planting", "description": "Help us plant trees in the local park.", "date": "2023-08-15T10:00:00+00:00", "location": "Local Park, Anytown, USA", "creator_id": "another-creator-uuid", "__class__": "Event"}, "EventVolunteer.21a306ad-8a5f-4a25-b163-18aea46d25a7": {"id": "21a306ad-8a5f-4a25-b163-18aea46d25a7", "created_at": "2024-06-28T01:41:36.971963+00:00", "updated_at": "2024-06-28T01:41:36.971980+00:00", "event_id": "event-uuid", "volunteer_id": "volunteer-uuid", "status": "accepted", "__class__": "EventVolunteer"}, "EventVolunteer.00f703cb-e06c-4eeb-a72b-b05ffdb8e956": {"id": "00f703cb-e06c-4eeb-a72b-b05ffdb8e956", "created_at": "2024-06-28T01:41:36.972965+00:00", "updated_at": "2024-06-28T01:41:36.972976+00:00", "event_id": "event-uuid", "volunteer_id": "volunteer-uuid", "status": "accepted", "__class__": "EventVolunteer"}, "VolunteerHours.b398f162-8d9b-45fa-a8c2-894e8141687b": {"id": "b398f162-8d9b-45fa-a8c2-894e8141687b", "created_at": "2024-06-28T01:41:36.974244+00:00", "updated_at": "2024-06-28T01:41:36.974276+00:00", "volunteer_id": "volunteer-uuid", "event_id": "event-uuid", "hours": 5.5, "verified": false, "__class__": "VolunteerHours"}, "VolunteerHours.a92ba74e-cf12-4548-93ef-4f2b204c590a": {"id": "a92ba74e-cf12-4548-93ef-4f2b204c590a", "created_at": "2024-06-28T01:41:36.975406+00:00", "updated_at": "2024-06-28T01:41:36.975421+00:00", "volunteer_id": "volunteer-uuid", "event_id": "event-uuid", "hours": 7.5, "verified": false, "__class__": "VolunteerHours"}, "Notification.c56b135f-40cd-404b-8509-f5fe03693113": {"id": "c56b135f-40cd-404b-8509-f5fe03693113", "created_at": "2024-06-28T01:41:36.976213+00:00", "updated_at": "2024-06-28T01:41:36.976224+00:00", "volunteer_id": "volunteer-uuid", "message": "You have a new message", "status": "unread", "__class__": "Notification"}, "Notification.749b256f-667d-4f88-9931-8ff4c82ffca4": {"id": "749b256f-667d-4f88-9931-8ff4c82ffca4", "created_at": "2024-06-28T01:41:36.977112+00:00", "updated_at": "2024-06-28T01:41:36.977120+00:00", "volunteer_id": "volunteer-uuid", "message": "You have a new message", "status": "unread", "__class__": "Notification"}}
+{
+  "BaseModel.317bc962-d864-451d-b60c-43d3d9050fa3": {
+    "id": "317bc962-d864-451d-b60c-43d3d9050fa3",
+    "created_at": "2024-06-28T01:41:11.642591+00:00",
+    "updated_at": "2024-06-28T01:41:11.643275+00:00",
+    "__class__": "BaseModel"
+  },
+  "BaseModel.a3c8e961-e442-4dd0-a284-f15b8a9054ab": {
+    "id": "a3c8e961-e442-4dd0-a284-f15b8a9054ab",
+    "created_at": "2024-06-28T01:41:13.774625+00:00",
+    "updated_at": "2024-06-28T01:41:13.775290+00:00",
+    "__class__": "BaseModel"
+  },
+  "Volunteer.ef863017-b1f7-48d8-be80-68a92f681a5b": {
+    "id": "ef863017-b1f7-48d8-be80-68a92f681a5b",
+    "created_at": "2024-06-28T01:41:18.715037+00:00",
+    "updated_at": "2024-06-28T01:41:19.055322+00:00",
+    "first_name": "Walter",
+    "last_name": "White",
+    "email": "heisenberg@me.com",
+    "phone": "555-555-5555",
+    "availability": "Monday, Wednesday, Friday, Sunday",
+    "password": "$2b$12$4Z90F7V1PHny.vBhLil8UOezd9EEaZ9JR/rb60iu6qj7opxb1me/C",
+    "__class__": "Volunteer"
+  },
+  "Volunteer.6c3bab93-d74f-4d29-9ae8-299fec3960ad": {
+    "id": "6c3bab93-d74f-4d29-9ae8-299fec3960ad",
+    "created_at": "2024-06-28T01:41:19.056022+00:00",
+    "updated_at": "2024-06-28T01:41:19.400902+00:00",
+    "first_name": "Jesse",
+    "last_name": "Pinkman",
+    "email": "jesseblue@me.com",
+    "phone": "222-222-2222",
+    "availability": "Monday, Wednesday, Friday, Sunday",
+    "password": "$2b$12$i8K0b06W3eP8m3mTdyjgcu1ss8C1g5gVp4gEVZEzqu/ln2TFeVmZe",
+    "__class__": "Volunteer"
+  },
+  "Event.106cf5a3-4433-4621-9a88-e33d5d6e61b9": {
+    "id": "106cf5a3-4433-4621-9a88-e33d5d6e61b9",
+    "created_at": "2024-06-28T01:41:29.441459+00:00",
+    "updated_at": "2024-06-28T01:41:29.441492+00:00",
+    "title": "Community Cleanup",
+    "description": "Join us for a community cleanup event.",
+    "date": "2023-07-01T09:00:00+00:00",
+    "location": "123 Main St, Anytown, USA",
+    "creator_id": "some-creator-uuid",
+    "__class__": "Event"
+  },
+  "Event.2c268d49-05d8-40b4-beb9-5cbf85788f6e": {
+    "id": "2c268d49-05d8-40b4-beb9-5cbf85788f6e",
+    "created_at": "2024-06-28T01:41:29.442721+00:00",
+    "updated_at": "2024-06-28T01:41:29.442743+00:00",
+    "title": "Tree Planting",
+    "description": "Help us plant trees in the local park.",
+    "date": "2023-08-15T10:00:00+00:00",
+    "location": "Local Park, Anytown, USA",
+    "creator_id": "another-creator-uuid",
+    "__class__": "Event"
+  },
+  "EventVolunteer.21a306ad-8a5f-4a25-b163-18aea46d25a7": {
+    "id": "21a306ad-8a5f-4a25-b163-18aea46d25a7",
+    "created_at": "2024-06-28T01:41:36.971963+00:00",
+    "updated_at": "2024-06-28T01:41:36.971980+00:00",
+    "event_id": "event-uuid",
+    "volunteer_id": "volunteer-uuid",
+    "status": "accepted",
+    "__class__": "EventVolunteer"
+  },
+  "EventVolunteer.00f703cb-e06c-4eeb-a72b-b05ffdb8e956": {
+    "id": "00f703cb-e06c-4eeb-a72b-b05ffdb8e956",
+    "created_at": "2024-06-28T01:41:36.972965+00:00",
+    "updated_at": "2024-06-28T01:41:36.972976+00:00",
+    "event_id": "event-uuid",
+    "volunteer_id": "volunteer-uuid",
+    "status": "accepted",
+    "__class__": "EventVolunteer"
+  },
+  "VolunteerHours.b398f162-8d9b-45fa-a8c2-894e8141687b": {
+    "id": "b398f162-8d9b-45fa-a8c2-894e8141687b",
+    "created_at": "2024-06-28T01:41:36.974244+00:00",
+    "updated_at": "2024-06-28T01:41:36.974276+00:00",
+    "volunteer_id": "volunteer-uuid",
+    "event_id": "event-uuid",
+    "hours": 5.5,
+    "verified": false,
+    "__class__": "VolunteerHours"
+  },
+  "VolunteerHours.a92ba74e-cf12-4548-93ef-4f2b204c590a": {
+    "id": "a92ba74e-cf12-4548-93ef-4f2b204c590a",
+    "created_at": "2024-06-28T01:41:36.975406+00:00",
+    "updated_at": "2024-06-28T01:41:36.975421+00:00",
+    "volunteer_id": "volunteer-uuid",
+    "event_id": "event-uuid",
+    "hours": 7.5,
+    "verified": false,
+    "__class__": "VolunteerHours"
+  },
+  "Notification.c56b135f-40cd-404b-8509-f5fe03693113": {
+    "id": "c56b135f-40cd-404b-8509-f5fe03693113",
+    "created_at": "2024-06-28T01:41:36.976213+00:00",
+    "updated_at": "2024-06-28T01:41:36.976224+00:00",
+    "volunteer_id": "volunteer-uuid",
+    "message": "You have a new message",
+    "status": "unread",
+    "__class__": "Notification"
+  },
+  "Notification.749b256f-667d-4f88-9931-8ff4c82ffca4": {
+    "id": "749b256f-667d-4f88-9931-8ff4c82ffca4",
+    "created_at": "2024-06-28T01:41:36.977112+00:00",
+    "updated_at": "2024-06-28T01:41:36.977120+00:00",
+    "volunteer_id": "volunteer-uuid",
+    "message": "You have a new message",
+    "status": "unread",
+    "__class__": "Notification"
+  }
+}
