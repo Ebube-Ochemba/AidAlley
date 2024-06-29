@@ -1,15 +1,18 @@
 #!/usr/bin/python3
 """This module defines the VolunteerHours class"""
 
-from models.base_model import BaseModel
+from models.base_model import BaseModel, Base
+from sqlalchemy import Column, String, Float, Boolean
 
 
-class VolunteerHours(BaseModel):
+class VolunteerHours(BaseModel, Base):
     """Represents Volunteer Hours"""
-    volunteer_id = ""
-    event_id = ""
-    hours = 0.0
-    verified = False
+    __tablename__ = 'volunteer_hours'
+
+    volunteer_id = Column(String(60), nullable=False)
+    event_id = Column(String(60), nullable=False)
+    hours = Column(Float, nullable=False, default=0.0)
+    verified = Column(Boolean, default=False)
 
     def __init__(self, *args, **kwargs):
         """Initializes VolunteerHours"""

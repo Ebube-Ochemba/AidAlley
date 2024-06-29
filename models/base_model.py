@@ -3,34 +3,36 @@
 
 from uuid import uuid4
 from datetime import datetime, timezone
-# from sqlalchemy import Column, String, DateTime
-# from sqlalchemy.ext.declarative import as_declarative
+from sqlalchemy import Column, String, DateTime
+from sqlalchemy.ext.declarative import declarative_base
 import models
 
+Base = declarative_base()
 
-# @as_declarative()
-class BaseModel:
+
+class BaseModel(Base):
     """A base class for all models
     Attributes:
     id (str): Unique identifier for the object
     created_at (datetime): Timestamp when the object is created
     updated_at (datetime): Timestamp when the object is last updated
     """
-    # id = Column(String(60), primary_key=True, default=lambda: str(uuid4()))
-    # created_at = Column(DateTime, default=lambda: datetime.now(timezone.utc))
-    # updated_at = Column(DateTime, default=lambda: datetime.now(timezone.utc),
-    #                     onupdate=lambda: datetime.now(timezone.utc))
+    __abstract__ = True # This marks the class as abstract for SQLAlchemy
+
+    id = Column(String(60), primary_key=True, nullable=False)
+    created_at = Column(DateTime, default=lambda: datetime.now(timezone.utc))
+    updated_at = Column(DateTime, default=lambda: datetime.now(timezone.utc),
+                        onupdate=lambda: datetime.now(timezone.utc))
 
     def __init__(self, *args, **kwargs):
         """Initializes an instance of BaseModel"""
-        if kwargs:
-            for key, value in kwargs.items():
-                if key != "__class__":
-                    setattr(self, key, value)
-        else:
+        super().__init__(*args, **kwargs)
+        if 'id' not in kwargs:
             self.id = str(uuid4())
-            self.created_at = datetime.now(timezone.utc)
-            self.updated_at = datetime.now(timezone.utc)
+        if 'created_at' in kwargs:
+            self.created_at = kwargs['created_at']
+        if 'updated_at' in kwargs:
+            self.updated_at = kwargs['updated_at']
 
     def __str__(self):
         """Returns string representation of BaseModel instance"""
@@ -47,8 +49,8 @@ class BaseModel:
                                                    datetime):
             new_dict["updated_at"] = new_dict["updated_at"].isoformat()
         new_dict["__class__"] = self.__class__.__name__
-        # if "_sa_instance_state" in new_dict:
-        #     del new_dict["_sa_instance_state"]
+        if "_sa_instance_state" in new_dict:
+            del new_dict["_sa_instance_state"]
         return new_dict
 
     def save(self):
