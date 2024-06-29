@@ -2,17 +2,20 @@
 """This module creates the Volunteer class"""
 
 import bcrypt
-from models.base_model import BaseModel
+from models.base_model import BaseModel, Base
+from sqlalchemy import Column, String
 
 
-class Volunteer(BaseModel):
+class Volunteer(BaseModel, Base):
     """Represents a volunteer in the application"""
-    first_name = ""
-    last_name = ""
-    email = ""
-    phone = ""
-    availability = ""
-    password = ""
+    __tablename__ = 'volunteers'
+
+    first_name = Column(String(128), nullable=False)
+    last_name = Column(String(128), nullable=False)
+    email = Column(String(128), nullable=False, unique=True)
+    phone = Column(String(20), nullable=True)
+    availability = Column(String(128), nullable=True)
+    password = Column(String(128), nullable=False)
 
     def __init__(self, *args, **kwargs):
         """Initializes volunteer"""
