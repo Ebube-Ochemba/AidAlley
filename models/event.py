@@ -1,17 +1,21 @@
 #!/usr/bin/python3
 """This module creates the Event class"""
 
-from models.base_model import BaseModel
+from models.base_model import BaseModel, Base
 from datetime import datetime, timezone
+from sqlalchemy import Column, String, DateTime
 
 
-class Event(BaseModel):
+class Event(BaseModel, Base):
     """Represents an Event"""
-    title = ""
-    description = ""
-    date = datetime.now(timezone.utc)
-    location = ""
-    creator_id = ""
+    __tablename__ = 'events'
+
+    title = Column(String(128), nullable=False)
+    description = Column(String(1024), nullable=True)
+    date = Column(DateTime, default=lambda: datetime.now(timezone.utc),
+                  nullable=False)
+    location = Column(String(256), nullable=True)
+    creator_id = Column(String(60), nullable=False)
 
     def __init__(self, *args, **kwargs):
         """Initializes event"""

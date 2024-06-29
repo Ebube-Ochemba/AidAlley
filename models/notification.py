@@ -1,14 +1,17 @@
 #!/usr/bin/python3
 """This module defines the Notification class"""
 
-from models.base_model import BaseModel
+from models.base_model import BaseModel, Base
+from sqlalchemy import Column, String
 
 
-class Notification(BaseModel):
+class Notification(BaseModel, Base):
     """Represents a Notification"""
-    volunteer_id = ""
-    message = ""
-    status = "unread"  # Default status
+    __tablename__ = 'notifications'
+
+    volunteer_id = Column(String(60), nullable=False)
+    message = Column(String(1024), nullable=False)
+    status = Column(String(60), nullable=False, default="unread")
 
     def __init__(self, *args, **kwargs):
         """Initializes Notification"""
