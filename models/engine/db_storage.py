@@ -13,7 +13,13 @@ from os import getenv
 from sqlalchemy import create_engine, func
 from sqlalchemy.orm import sessionmaker, scoped_session
 
-classes = [Volunteer, Event, EventVolunteer, Notification, VolunteerHours]
+classes = {
+    'Volunteer': Volunteer,
+    'Event': Event,
+    'EventVolunteer': EventVolunteer,
+    'Notification': Notification,
+    'VolunteerHours': VolunteerHours
+}
 
 
 class DBStorage:
@@ -28,7 +34,7 @@ class DBStorage:
         psswd = getenv("AIDALLEY_MYSQL_PWD")
         host = getenv("AIDALLEY_MYSQL_HOST")
         dtbs = getenv("AIDALLEY_MYSQL_DB")
-        url = "mysql+mysqldb://{}:{}@{}/{}".format(usr, psswd, host, dtbs)
+        url = f"mysql+mysqldb://{usr}:{psswd}@{host}/{dtbs}"
         self.__engine = create_engine(url, pool_pre_ping=True)
 
         if getenv('AIDALLEY_ENV') == 'test':
@@ -39,15 +45,13 @@ class DBStorage:
         Return:
             Dict of queried classes, format: <class name>.<obj id> = obj.
         """
-        if not cls:  # create new SQL query object & make object list of tables
-            qry_obj = []
-            qry_obj.extend(self.__session.query(Event))
-            qry_obj.extend(self.__session.query(EventVolunteer))
-            qry_obj.extend(self.__session.query(Notification))
-            qry_obj.extend(self.__session.query(Volunteer))
-            qry_obj.extend(self.__session.query(VolunteerHours))
+        # create new SQL query object & make object list of tables
+        qry_obj = []
+        if cls is None:
+            for cls_name, cls in classes.items():
+                qry_obj.extend(self.__session.query(cls).all())
         else:
-            qry_obj = self.__session.query(cls)
+            qry_obj = self.__session.query(classes[cls]).all()
 
         result = {'{}.{}'.format(type(obj).__name__, obj.id):
                   obj for obj in qry_obj}
@@ -85,13 +89,16 @@ class DBStorage:
         """
         if cls not in classes:
             return None
-        return self.__session.query(cls).filter_by(id=id).first()
-    
+        return self.__session.query(classes[cls]).filter_by(id=id).first()
+
     def count(self, cls=None):
         """
         Count the number of objects in storage for a given class
         """
         if cls is None:
-            return sum(self.count(cls) for cls in classes)
+            total = sum(
+                self.__session.query(func.count(classes[cls_name].id)).scalar()
+                for cls_name in classes)
+            return total
         else:
-            return self.__session.query(func.count(cls.id)).scalar()
+            return self.__session.query(func.count(classes[cls].id)).scalar()
