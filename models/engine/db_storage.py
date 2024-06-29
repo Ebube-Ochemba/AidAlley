@@ -85,7 +85,6 @@ class DBStorage:
         """
         if cls not in classes:
             return None
-
         return self.__session.query(cls).filter_by(id=id).first()
     
     def count(self, cls=None):
