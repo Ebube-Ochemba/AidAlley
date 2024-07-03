@@ -4,6 +4,7 @@
 import bcrypt
 from models.base_model import BaseModel, Base
 from sqlalchemy import Column, String
+from sqlalchemy.orm import relationship
 
 
 class Volunteer(BaseModel, Base):
@@ -16,6 +17,20 @@ class Volunteer(BaseModel, Base):
     phone = Column(String(20), nullable=True)
     availability = Column(String(128), nullable=True)
     password = Column(String(128), nullable=False)
+
+    # Relationships
+    created_events = relationship('Event',
+                                  back_populates='creator',
+                                  cascade="all, delete, delete-orphan")
+    registered_events = relationship('EventVolunteer',
+                                     back_populates='volunteer',
+                                     cascade="all, delete, delete-orphan")
+    hours_entries = relationship('VolunteerHours',
+                                 back_populates='volunteer',
+                                 cascade="all, delete, delete-orphan")
+    notifications = relationship('Notification',
+                                 back_populates='volunteer',
+                                 cascade="all, delete, delete-orphan")
 
     def __init__(self, *args, **kwargs):
         """Initializes volunteer"""
