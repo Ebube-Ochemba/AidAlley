@@ -1,4 +1,5 @@
 -- A script that prepares a MySQL server for the AidAlley project:
+-- to use: "cat setup_mysql_dev.sql | mysql -hlocalhost -uroot -p"
 
 -- Create the database if it does not exist
 CREATE DATABASE IF NOT EXISTS aidalley_db;
