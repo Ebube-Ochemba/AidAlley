@@ -3,7 +3,8 @@
 
 from models.base_model import BaseModel, Base
 from datetime import datetime, timezone
-from sqlalchemy import Column, String, DateTime
+from sqlalchemy import Column, String, DateTime, ForeignKey
+from sqlalchemy.orm import relationship
 
 
 class Event(BaseModel, Base):
@@ -15,7 +16,18 @@ class Event(BaseModel, Base):
     date = Column(DateTime, default=lambda: datetime.now(timezone.utc),
                   nullable=False)
     location = Column(String(256), nullable=True)
-    creator_id = Column(String(60), nullable=False)
+    creator_id = Column(String(60), ForeignKey('volunteers.id'),
+                        nullable=False)
+
+    # Relationships
+    creator = relationship('Volunteer',
+                           back_populates='created_events')
+    registered_volunteers = relationship('EventVolunteer',
+                                         back_populates='event',
+                                         cascade="all, delete, delete-orphan")
+    hours_entries = relationship('VolunteerHours',
+                                 back_populates='event',
+                                 cascade="all, delete, delete-orphan")
 
     def __init__(self, *args, **kwargs):
         """Initializes event"""
