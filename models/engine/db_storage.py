@@ -51,7 +51,11 @@ class DBStorage:
             for cls_name, cls in classes.items():
                 qry_obj.extend(self.__session.query(cls).all())
         else:
-            qry_obj = self.__session.query(classes[cls]).all()
+            if isinstance(cls, str):  # Takes both str and class name
+                cls = classes.get(cls)
+                if not cls:
+                    return {}
+            qry_obj = self.__session.query(cls).all()
 
         result = {'{}.{}'.format(type(obj).__name__, obj.id):
                   obj for obj in qry_obj}
