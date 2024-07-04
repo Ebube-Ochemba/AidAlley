@@ -23,7 +23,8 @@ def get_event(event_id):
     return jsonify(event.to_dict())
 
 
-@app_views.route('/events/<event_id>', methods=['DELETE'], strict_slashes=False)
+@app_views.route('/events/<event_id>', methods=['DELETE'],
+                 strict_slashes=False)
 def delete_event(event_id):
     """Deletes a specific Event object by ID"""
     event = storage.get(Event, event_id)
@@ -63,7 +64,7 @@ def update_event(event_id):
     if req_json is None:
         abort(400, 'Not a JSON')
     for key, value in req_json.items():
-        if key not in ['id', 'created_at', 'updated_at']:
+        if key not in ['id', 'creator_id', 'created_at', 'updated_at']:
             setattr(event, key, value)
     event.save()
     return jsonify(event.to_dict()), 200
