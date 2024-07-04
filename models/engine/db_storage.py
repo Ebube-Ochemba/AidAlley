@@ -51,7 +51,11 @@ class DBStorage:
             for cls_name, cls in classes.items():
                 qry_obj.extend(self.__session.query(cls).all())
         else:
-            qry_obj = self.__session.query(classes[cls]).all()
+            if isinstance(cls, str):  # Takes both str and class name
+                cls = classes.get(cls)
+                if not cls:
+                    return {}
+            qry_obj = self.__session.query(cls).all()
 
         result = {'{}.{}'.format(type(obj).__name__, obj.id):
                   obj for obj in qry_obj}
@@ -87,9 +91,11 @@ class DBStorage:
         Returns the object based on the class name and its ID,
         or None if not found
         """
-        if cls not in classes:
+        if cls is None or cls not in classes.values():
             return None
-        return self.__session.query(classes[cls]).filter_by(id=id).first()
+        if isinstance(cls, str):  # Takes both str and class name
+            cls = classes.get(cls)
+        return self.__session.query(cls).filter_by(id=id).first()
 
     def count(self, cls=None):
         """
@@ -101,4 +107,6 @@ class DBStorage:
                 for cls_name in classes)
             return total
         else:
-            return self.__session.query(func.count(classes[cls].id)).scalar()
+            if isinstance(cls, str):  # Takes both str and class name
+                cls = classes[cls]
+            return self.__session.query(func.count(cls.id)).scalar()
