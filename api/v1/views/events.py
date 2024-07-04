@@ -49,6 +49,8 @@ def create_event():
         abort(400, 'Missing date')
     if 'location' not in req_json:
         abort(400, 'Missing location')
+    if 'creator_id' not in req_json:
+        abort(400, 'Missing creator_id')
     new_event = Event(**req_json)
     new_event.save()
     return jsonify(new_event.to_dict()), 201
