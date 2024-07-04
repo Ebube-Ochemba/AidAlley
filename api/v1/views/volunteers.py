@@ -44,8 +44,14 @@ def create_volunteer():
     req_json = request.get_json()
     if req_json is None:
         abort(400, 'Not a JSON')
+    if 'first_name' not in req_json:
+        abort(400, 'Missing first_name')
+    if 'last_name' not in req_json:
+        abort(400, 'Missing last_name')
     if 'email' not in req_json:
         abort(400, 'Missing email')
+    if 'phone' not in req_json:
+        abort(400, 'Missing phone')
     if 'password' not in req_json:
         abort(400, 'Missing password')
     new_volunteer = Volunteer(**req_json)
