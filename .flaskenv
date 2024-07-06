@@ -1,4 +1,4 @@
-FLASK_APP=api.v1.app
+FLASK_APP=web_app.app
 AIDALLEY_ENV=dev
 AIDALLEY_MYSQL_USER=aidalley_user
 AIDALLEY_MYSQL_PWD=aidalley_pwd
