@@ -50,3 +50,50 @@
 .nav-link:hover {
     color: #000000;  /* Darken link color on hover */
 }
+
+/* Mobile devices */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;  /* Stack elements vertically */
+        text-align: center;  /* Center text */
+        padding: 10px;  /* Add padding */
+    }
+
+    .logo-title {
+        margin-bottom: 10px;  /* Add space below the logo-title section */
+    }
+
+    .logo-link {
+        width: 35px;  /* Further reduce width of the logo */
+        height: 35px;  /* Further reduce height of the logo */
+    }
+
+    .site-title {
+        font-size: 1.5em;  /* Reduce font size for the title */
+    }
+
+    .nav-link {
+        font-size: 0.8em;  /* Reduce font size for navigation links */
+    }
+
+    .navigation {
+        gap: 10px;  /* Reduce gap between navigation links */
+        flex-wrap: wrap;  /* Allow navigation links to wrap */
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+    .logo-link {
+        width: 30px;  /* Further reduce width of the logo */
+        height: 30px;  /* Further reduce height of the logo */
+    }
+
+    .site-title {
+        font-size: 1.2em;  /* Reduce font size for the title */
+    }
+
+    .nav-link {
+        font-size: 0.7em;  /* Reduce font size for navigation links */
+    }
+}

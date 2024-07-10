@@ -15,7 +15,7 @@
 
 /* Hero Content */
 .hero-content {
-    background-color: #00000033;  /* Semi-transparent background */
+    background-color: rgba(0, 0, 0, 0.3);  /* Semi-transparent background */
     padding: 20px;
     border-radius: 10px;            /* Rounded corners */
 }
@@ -31,11 +31,12 @@
 }
 
 .hero-content button {
-    background-color: #00000033;   /* Transparent color */
+    background-color: rgba(0, 0, 0, 0.3);  /* Semi-transparent background */
     color: #FFFFFF;              /* White text */
     border: none;
     padding: 10px 20px;
     margin: 5px;
+    font-family: "Courier New", "Helvetica", "Arial", sans-serif;
     font-size: 1em;
     cursor: pointer;
     border-radius: 5px;          /* Rounded corners */
@@ -43,5 +44,60 @@
 }
 
 .hero-content button:hover {
-    background-color: #00000050;   /* Darker gold on hover */
+    background-color: #00000050;   /* Darker background on hover */
+}
+
+
+/* Media Queries for Responsiveness */
+
+/* Tablets and small desktops */
+@media (max-width: 992px) {
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-content p {
+        font-size: 1.2em;
+    }
+
+    .hero-content button {
+        font-size: 0.9em;
+        padding: 8px 16px;
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2em;
+    }
+
+    .hero-content p {
+        font-size: 1em;
+    }
+
+    .hero-content button {
+        font-size: 0.8em;
+        padding: 6px 12px;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+    .hero-content {
+        padding: 10px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.5em;
+    }
+
+    .hero-content p {
+        font-size: 0.8em;
+    }
+
+    .hero-content button {
+        font-size: 0.7em;
+        padding: 5px 10px;
+    }
 }
