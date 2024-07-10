@@ -6,10 +6,10 @@
     align-items: center;         /* Center content vertically */
     text-align: center;          /* Center text */
     width: 100%;                 /* Take full width */
-    height: 75vh;                /* Take up about half the viewport height */
+    height: 75vh;                /* Take up 75% the viewport height */
     background: url("../images/hero-bg.jpg") no-repeat center center;  /* Background image */
     background-size: cover;      /* Cover the entire section */
-    color: #FFFFFF;              /* White text color */
+    color: #FFFFFF;
     padding: 20px;               /* Padding for inner spacing */
 }
 
@@ -31,7 +31,7 @@
 }
 
 .hero-content button {
-    background-color: rgba(0, 0, 0, 0.3);  /* Semi-transparent background */
+    background-color: rgba(0, 0, 0, 0.3);
     color: #FFFFFF;              /* White text */
     border: none;
     padding: 10px 20px;
@@ -44,7 +44,7 @@
 }
 
 .hero-content button:hover {
-    background-color: #00000050;   /* Darker background on hover */
+    background-color: #00000050;
 }
 
 

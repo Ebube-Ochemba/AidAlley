@@ -1,6 +1,6 @@
 .main-header {
-    background-color: #EEEEEE;    /* Light gray background for header */
-    border-bottom: 1px solid #CCCCCC;  /* Light gray border */
+    background-color: #EEEEEE;
+    border-bottom: 1px solid #CCCCCC;
     padding: 10px 0;  /* Vertical padding for spacing */
 }
 
@@ -8,8 +8,8 @@
     display: flex;  /* Flexbox for aligning children horizontally */
     justify-content: space-between;  /* Space between logo-title and navigation */
     align-items: center;  /* Center items vertically */
-    width: 100%;  /* Take full width for the header container */
-    margin: 0 auto;  /* Center the header container horizontally */
+    width: 100%;      /* Take full width for the header container */
+    margin: 0 auto;   /* Center the header container horizontally */
     padding: 0 20px;  /* Horizontal padding for spacing */
 }
 
@@ -20,16 +20,16 @@
 
 .logo-link {
     display: block;
-    width: 50px;  /* Width of the logo */
-    height: 50px;  /* Height of the logo */
+    width: 50px;
+    height: 50px;
     margin-right: 10px;  /* Space between logo and title */
 }
 
 .logo {
     background: url("../images/logo.png") no-repeat center center;
     background-size: contain;  /* Ensure logo scales correctly */
-    width: 100%;  /* Take full width of the parent */
-    height: 100%;  /* Take full height of the parent */
+    width: 100%;
+    height: 100%;
 }
 
 .site-title {
