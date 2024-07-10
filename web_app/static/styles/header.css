@@ -1,0 +1,53 @@
+.main-header {
+    background-color: #FFFFFF;  /* White background for header */
+    border-bottom: 1px solid #CCCCCC;  /* Light gray border */
+    padding: 10px 0;  /* Vertical padding for spacing */
+}
+
+.header-container {
+    display: flex;  /* Flexbox for aligning children horizontally */
+    justify-content: space-between;  /* Space between logo-title and navigation */
+    align-items: center;  /* Center items vertically */
+    width: 100%;  /* Take full width for the header container */
+    margin: 0 auto;  /* Center the header container horizontally */
+    padding: 0 20px;  /* Horizontal padding for spacing */
+}
+
+.logo-title {
+    display: flex;  /* Flexbox for aligning logo and title horizontally */
+    align-items: center;  /* Center items vertically */
+}
+
+.logo-link {
+    display: block;
+    width: 50px;  /* Width of the logo */
+    height: 50px;  /* Height of the logo */
+    margin-right: 10px;  /* Space between logo and title */
+}
+
+.logo {
+    background: url("../images/logo.png") no-repeat center center;
+    background-size: contain;  /* Ensure logo scales correctly */
+    width: 100%;  /* Take full width of the parent */
+    height: 100%;  /* Take full height of the parent */
+}
+
+.site-title {
+    font-size: 2em;  /* Larger font size for the title */
+    font-family: "Courier New", "Helvetica", "Arial", sans-serif;
+}
+
+.navigation {
+    display: flex;  /* Flexbox for aligning links horizontally */
+    gap: 20px;  /* Space between navigation links */
+}
+
+.nav-link {
+    text-decoration: none;  /* Remove underline from links */
+    color: #414141;  /* Dark gray color for links */
+    font-size: 1em;  /* Standard font size */
+}
+
+.nav-link:hover {
+    color: #000000;  /* Darken link color on hover */
+}
