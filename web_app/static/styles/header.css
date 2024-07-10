@@ -52,7 +52,7 @@
 }
 
 /* Mobile devices */
-@media (max-width: 768px) {
+@media (max-width: 520px) {
     .header-container {
         flex-direction: column;  /* Stack elements vertically */
         text-align: center;  /* Center text */
