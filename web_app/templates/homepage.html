@@ -6,8 +6,9 @@
     <title>AidAlley</title>
     <link rel="icon" href="../static/images/icon.png?{{ cache_id }}" />
     <!-- CSS -->
-    <link rel="stylesheet" href="../static/styles/header.css?{{ cache_id }}"/> 
+    <link rel="stylesheet" href="../static/styles/header.css?{{ cache_id }}"/>
     <link rel="stylesheet" href="../static/styles/common.css?{{ cache_id }}"/>
+    <link rel="stylesheet" href="../static/styles/homepage.css?{{ cache_id }}"/>
     <link rel="stylesheet" href="../static/styles/{{ filename }}?{{ cache_id }}"/>
     <!-- JavaScript -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -29,11 +30,13 @@
         </div>
     </header>
 
-    <section>
-        <h1>Welcome to AidAlley!</h1>
-        <p>Connecting Hearts, Coordinating Hands</p>
-        <button onclick="location.href='/learn-more'">Learn More</button>
-        <button onclick="location.href='/events'">View Events</button>
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Welcome to AidAlley!</h1>
+            <p>Connecting Hearts, Coordinating Hands</p>
+            <button onclick="location.href='/learn-more'">Learn More</button>
+            <button onclick="location.href='/events'">View Events</button>
+        </div>
     </section>
 
     <section>

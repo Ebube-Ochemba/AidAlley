@@ -1,0 +1,47 @@
+/* homepage styles */
+
+.hero-section {
+    display: flex;
+    justify-content: center;     /* Center content horizontally */
+    align-items: center;         /* Center content vertically */
+    text-align: center;          /* Center text */
+    width: 100%;                 /* Take full width */
+    height: 75vh;                /* Take up about half the viewport height */
+    background: url("../images/hero-bg.jpg") no-repeat center center;  /* Background image */
+    background-size: cover;      /* Cover the entire section */
+    color: #FFFFFF;              /* White text color */
+    padding: 20px;               /* Padding for inner spacing */
+}
+
+/* Hero Content */
+.hero-content {
+    background-color: #00000033;  /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;            /* Rounded corners */
+}
+
+.hero-content h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.hero-content button {
+    background-color: #00000033;   /* Transparent color */
+    color: #FFFFFF;              /* White text */
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;          /* Rounded corners */
+    transition: background-color 0.3s ease;  /* Smooth transition for hover effect */
+}
+
+.hero-content button:hover {
+    background-color: #00000050;   /* Darker gold on hover */
+}
