@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>AidAlley</title>
+    <link rel="icon" href="../static/images/icon.png?{{ cache_id }}" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="../static/styles/header.css?{{ cache_id }}"/> 
+    <link rel="stylesheet" href="../static/styles/common.css?{{ cache_id }}"/>
+    <link rel="stylesheet" href="../static/styles/{{ filename }}?{{ cache_id }}"/>
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="../static/scripts/{{ filename }}?{{ cache_id }}"></script>
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-title">
+                <a href="/" class="logo-link">
+                    <div class="logo"></div>
+                </a>
+                <h1 class="site-title">AidAlley</h1>
+            </div>
+            <nav class="navigation">
+                <a href="/login" class="nav-link">Login</a>
+                <a href="/create-account" class="nav-link">Create Account</a>
+            </nav>
+        </div>
+    </header>
+
+    <section>
+        <h1>Welcome to AidAlley!</h1>
+        <p>Connecting Hearts, Coordinating Hands</p>
+        <button onclick="location.href='/learn-more'">Learn More</button>
+        <button onclick="location.href='/events'">View Events</button>
+    </section>
+
+    <section>
+        <h2>Upcoming Events</h2>
+        <div class="events">
+            {% for event in events %}
+                <div class="event">
+                    <h3>{{ event.name }}</h3>
+                    <p>Date: {{ event.date }}</p>
+                    <p>Location: {{ event.location }}</p>
+                    <button onclick="location.href='/events/{{ event.id }}'">More Info</button>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <footer>
+        <p>Contact Information</p>
+        <div>
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+        </div>
+    </footer>
+</body>
+</html>
