@@ -7,7 +7,7 @@
     text-align: center;          /* Center text */
     width: 100%;                 /* Take full width */
     height: 75vh;                /* Take up 75% the viewport height */
-    background: url("../images/hero-bg.jpg") no-repeat center 25%;  /* Background image */
+    background: url("../images/hero-bg.jpg") no-repeat center 25%;
     background-size: cover;      /* Cover the entire section */
     color: #FFFFFF;
     padding: 20px;               /* Padding for inner spacing */
@@ -30,20 +30,20 @@
     margin-bottom: 20px;
 }
 
-.hero-content button {
+.hero-button {
     background-color: rgba(0, 0, 0, 0.3);
     color: #FFFFFF;              /* White text */
     border: none;
+    border-radius: 5px;
     padding: 10px 20px;
     margin: 5px;
     font-family: "Courier New", "Helvetica", "Arial", sans-serif;
     font-size: 1em;
     cursor: pointer;
-    border-radius: 5px;          /* Rounded corners */
     transition: background-color 0.3s ease;  /* Smooth transition for hover effect */
 }
 
-.hero-content button:hover {
+.hero-button:hover {
     background-color: rgba(0, 0, 0, 0.7);
 }
 
@@ -60,7 +60,7 @@
         font-size: 1.2em;
     }
 
-    .hero-content button {
+    .hero-button {
         font-size: 0.9em;
         padding: 8px 16px;
     }
@@ -76,7 +76,7 @@
         font-size: 1em;
     }
 
-    .hero-content button {
+    .hero-button {
         font-size: 0.8em;
         padding: 6px 12px;
     }
@@ -96,7 +96,7 @@
         font-size: 0.8em;
     }
 
-    .hero-content button {
+    .hero-button {
         font-size: 0.7em;
         padding: 5px 10px;
     }
