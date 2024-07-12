@@ -1,9 +1,11 @@
+/* Header and Footer Styles */
+
+/* Header Styles */
 .main-header {
     background-color: #EEEEEE;
     border-bottom: 1px solid #CCCCCC;
     padding: 10px 0;  /* Vertical padding for spacing */
 }
-
 .header-container {
     display: flex;  /* Flexbox for aligning children horizontally */
     justify-content: space-between;  /* Space between logo-title and navigation */
@@ -12,75 +14,107 @@
     margin: 0 auto;   /* Center the header container horizontally */
     padding: 0 20px;  /* Horizontal padding for spacing */
 }
-
 .logo-title {
     display: flex;  /* Flexbox for aligning logo and title horizontally */
     align-items: center;  /* Center items vertically */
 }
-
 .logo-link {
     display: block;
     width: 50px;
     height: 50px;
     margin-right: 10px;  /* Space between logo and title */
 }
-
 .logo {
     background: url("../images/logo.png") no-repeat center center;
     background-size: contain;  /* Ensure logo scales correctly */
     width: 90%;
     height: 90%;
 }
-
 .site-title {
     font-size: 2em;  /* Larger font size for the title */
 }
-
 .navigation {
     display: flex;  /* Flexbox for aligning links horizontally */
     gap: 20px;  /* Space between navigation links */
 }
-
 .nav-link {
     text-decoration: none;  /* Remove underline from links */
     color: #414141;  /* Dark gray color for links */
     font-size: 1em;  /* Standard font size */
 }
-
 .nav-link:hover {
     color: #000000;  /* Darken link color on hover */
 }
 
+/* Footer Styles */
+.main-footer {
+    padding: 20px 0;  /* Vertical padding */
+    background-color: #414141;
+    text-align: center;  /* Center content */
+}
 
-/* Responsive styles  */
+.social-media-links {
+    display: flex;  /* Flexbox for aligning links horizontally */
+    justify-content: center;  /* Center links horizontally */
+    gap: 20px;  /* Space between social media links */
+}
+
+.social-link {
+    display: block;
+    width: 40px;  /* Width of social media icons */
+    height: 40px;  /* Height of social media icons */
+    background-size: contain;  /* Ensure icons scale correctly */
+    background-repeat: no-repeat;  /* No repeat for background images */
+}
+/* Specific Icons */
+.facebook-link {
+    background-image: url("../images/facebook.png");
+}
+.twitter-link {
+    background-image: url("../images/twitter.png");
+}
+.instagram-link {
+    background-image: url("../images/instagram.png");
+}
+.youtube-link {
+    background-image: url("../images/youtube.png");
+}
+
+
+/* Responsive styles */
 
 /* Tablet devices */
 @media only screen and (min-width: 401px) and (max-width: 960px) {
+    /* Header Styles */
     .header-container {
         text-align: center;  /* Center text */
         padding: 10px;  /* Add padding */
     }
-
     .logo-title {
         margin-bottom: 10px;  /* Add space below the logo-title section */
     }
-
     .logo-link {
         width: 35px;  /* Further reduce width of the logo */
         height: 35px;  /* Further reduce height of the logo */
     }
-
     .site-title {
         font-size: 1.5em;  /* Reduce font size for the title */
     }
-
     .nav-link {
         font-size: 0.8em;  /* Reduce font size for navigation links */
     }
-
     .navigation {
         gap: 10px;  /* Reduce gap between navigation links */
         flex-wrap: wrap;  /* Allow navigation links to wrap */
+    }
+
+    /* Footer Styles */
+    .social-media-links {
+        gap: 15px;  /* Adjust space between links for smaller screens */
+    }
+    .social-link {
+        width: 30px;  /* Adjust icon size for smaller screens */
+        height: 30px;
     }
 }
 

@@ -100,40 +100,6 @@
     background-color: #B6C7AA;  /* Darker blue on hover */
 }
 
-/* Footer Styles */
-.main-footer {
-    padding: 20px 0;  /* Vertical padding */
-    background-color: #414141;
-    text-align: center;  /* Center content */
-}
-
-.social-media-links {
-    display: flex;  /* Flexbox for aligning links horizontally */
-    justify-content: center;  /* Center links horizontally */
-    gap: 20px;  /* Space between social media links */
-}
-
-.social-link {
-    display: block;
-    width: 40px;  /* Width of social media icons */
-    height: 40px;  /* Height of social media icons */
-    background-size: contain;  /* Ensure icons scale correctly */
-    background-repeat: no-repeat;  /* No repeat for background images */
-}
-/* Specific Icons */
-.facebook-link {
-    background-image: url("../images/facebook.png");
-}
-.twitter-link {
-    background-image: url("../images/twitter.png");
-}
-.instagram-link {
-    background-image: url("../images/instagram.png");
-}
-.youtube-link {
-    background-image: url("../images/youtube.png");
-}
-
 
 /* Media Queries for Responsiveness */
 
@@ -176,14 +142,6 @@
     }
     .event-item {
         width: 200px;  /* Adjust width for smaller screens */
-    }
-
-    .social-media-links {
-        gap: 15px;  /* Adjust space between links for smaller screens */
-    }
-    .social-link {
-        width: 30px;  /* Adjust icon size for smaller screens */
-        height: 30px;
     }
 }
 
