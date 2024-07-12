@@ -13,7 +13,7 @@ def display_homepage():
     # Fetch upcoming events from the storage
     events = storage.all(Event).values()
     # Show top 3 upcoming events
-    upcoming_events = sorted(events, key=lambda event: event.date)[:4]
+    upcoming_events = sorted(events, key=lambda event: event.date)[:8]
     return render_template('homepage.html',
                            cache_id=uuid4(),
                            events=upcoming_events)
