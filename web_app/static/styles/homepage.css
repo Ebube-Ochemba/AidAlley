@@ -51,6 +51,7 @@
     display: flex;
     align-items: center;
     margin-bottom: 20px;  /* Space below the header */
+    border-bottom: 1px solid #CCCCCC;
 }
 .events-logo {
     background: url("../images/upcoming-events.png") no-repeat center center;
