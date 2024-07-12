@@ -1,5 +1,6 @@
 /* homepage styles */
 
+/* Hero Content */
 .hero-section {
     display: flex;
     justify-content: center;     /* Center content horizontally */
@@ -12,24 +13,19 @@
     color: #FFFFFF;
     padding: 20px;               /* Padding for inner spacing */
 }
-
-/* Hero Content */
 .hero-content {
     background-color: rgba(0, 0, 0, 0.3);  /* Semi-transparent background */
     padding: 20px;
     border-radius: 10px;            /* Rounded corners */
 }
-
 .hero-content h1 {
     font-size: 3em;
     margin-bottom: 10px;
 }
-
 .hero-content p {
     font-size: 1.5em;
     margin-bottom: 20px;
 }
-
 .hero-button {
     background-color: rgba(0, 0, 0, 0.3);
     color: #FFFFFF;              /* White text */
@@ -42,9 +38,68 @@
     cursor: pointer;
     transition: background-color 0.3s ease;  /* Smooth transition for hover effect */
 }
-
 .hero-button:hover {
     background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Upcoming Events Section */
+.upcoming-events-section {
+    padding: 40px 20px;  /* Padding around the section */
+    background-color: #F9F9F9;  /* Light background color */
+}
+.events-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;  /* Space below the header */
+}
+.events-logo {
+    background: url("../images/upcoming-events.png") no-repeat center center;  /* Placeholder for your icon */
+    background-size: contain;  /* Ensure logo scales correctly */
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;  /* Space between logo and title */
+}
+.events-header h2 {
+    font-size: 2em;  /* Larger font size for the title */
+}
+/* Events Grid */
+.events-grid {
+    display: flex;
+    justify-content: space-around;  /* Distribute space evenly */
+    flex-wrap: wrap;  /* Allow items to wrap to next line */
+    gap: 20px;  /* Space between grid items */
+}
+.event-item {
+    background-color: #FFFFFF;  /* White background for event items */
+    padding: 20px;
+    border-radius: 10px;  /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  /* Subtle shadow for depth */
+    width: 300px;  /* Fixed width for event items */
+    text-align: center;  /* Center text */
+    display: flex;
+    flex-direction: column;  /* Column layout */
+    justify-content: space-between;  /* Space out content */
+}
+.event-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+.event-item p {
+    font-size: 1em;
+    margin-bottom: 5px;
+}
+.event-link {
+    display: inline-block;
+    background-color: #007BFF;  /* Blue background */
+    color: #FFFFFF;  /* White text */
+    text-decoration: none;  /* Remove underline */
+    padding: 10px 20px;
+    border-radius: 5px;  /* Rounded corners */
+    transition: background-color 0.3s ease;  /* Smooth transition for hover effect */
+}
+
+.event-link:hover {
+    background-color: #0056b3;  /* Darker blue on hover */
 }
 
 
@@ -55,14 +110,19 @@
     .hero-content h1 {
         font-size: 2.5em;
     }
-
     .hero-content p {
         font-size: 1.2em;
     }
-
     .hero-button {
         font-size: 0.9em;
         padding: 8px 16px;
+    }
+
+    .events-grid {
+        gap: 15px;  /* Smaller gap between items */
+    }
+    .event-item {
+        width: 250px;  /* Adjust width for smaller screens */
     }
 }
 
@@ -70,15 +130,20 @@
 @media only screen and (max-width: 768px) {
     .hero-content h1 {
         font-size: 2em;
-    }
-
+    }y
     .hero-content p {
         font-size: 1em;
     }
-
     .hero-button {
         font-size: 0.8em;
         padding: 6px 12px;
+    }
+
+    .events-grid {
+        gap: 10px;  /* Smaller gap between items */
+    }
+    .event-item {
+        width: 200px;  /* Adjust width for smaller screens */
     }
 }
 
@@ -87,17 +152,23 @@
     .hero-content {
         padding: 10px;
     }
-
     .hero-content h1 {
         font-size: 1.5em;
     }
-
     .hero-content p {
         font-size: 0.8em;
     }
-
     .hero-button {
         font-size: 0.7em;
         padding: 5px 10px;
+    }
+
+    .events-grid {
+        flex-direction: column;  /* Stack items vertically */
+        align-items: center;  /* Center items */
+    }
+    .event-item {
+        width: 90%;  /* Adjust width for smaller screens */
+        margin-bottom: 20px;  /* Space between stacked items */
     }
 }

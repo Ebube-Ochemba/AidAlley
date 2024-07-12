@@ -40,17 +40,17 @@
     </section>
 
     <section class="upcoming-events-section">
-        <div class="section-header">
-            <div class="icon"></div>
+        <div class="events-header">
+            <div class="events-logo"></div>
             <h2>Upcoming Events</h2>
         </div>
         <div class="events-grid">
             {% for event in events %}
-                <div class="event-card">
+                <div class="event-item">
                     <h3>{{ event.title }}</h3>
                     <p>Date: {{ event.date }}</p>
                     <p>Location: {{ event.location }}</p>
-                    <a href="/events/{{ event.id }}" class="event-button">More Info</a>
+                    <a href="/events/{{ event.id }}" class="event-link">More Info</a>
                 </div>
             {% endfor %}
         </div>
