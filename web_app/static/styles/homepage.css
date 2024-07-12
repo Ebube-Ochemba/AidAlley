@@ -44,13 +44,13 @@
 
 /* Upcoming Events Section */
 .upcoming-events-section {
-    padding: 20px 20px;  /* Padding around the section */
-    background-color: #EEEEEE;  /* Light background color */
+    padding: 20px 20px 30px 20px;
+    background-color: #EEEEEE;
 }
 .events-header {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;  /* Space below the header */
+    margin-bottom: 20px;
     border-bottom: 1px solid #CCCCCC;
 }
 .events-logo {
@@ -94,11 +94,11 @@
     background-color: #698474;
     color: #FFFFFF;  /* White text */
     padding: 10px 20px;
-    border-radius: 5px;  /* Rounded corners */
+    border-radius: 5px;
     transition: background-color 0.3s ease;  /* Smooth transition for hover effect */
 }
 .event-link-button:hover {
-    background-color: #B6C7AA;  /* Darker blue on hover */
+    background-color: #9EB58E;
 }
 
 
