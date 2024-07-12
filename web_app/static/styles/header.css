@@ -51,10 +51,12 @@
     color: #000000;  /* Darken link color on hover */
 }
 
-/* Mobile devices */
-@media (max-width: 520px) {
+
+/* Responsive styles  */
+
+/* Tablet devices */
+@media only screen and (min-width: 401px) and (max-width: 960px) {
     .header-container {
-        flex-direction: column;  /* Stack elements vertically */
         text-align: center;  /* Center text */
         padding: 10px;  /* Add padding */
     }
@@ -82,8 +84,8 @@
     }
 }
 
-/* Small mobile devices */
-@media (max-width: 480px) {
+/* Mobile devices */
+@media only screen and (max-width: 400px) {
     .logo-link {
         width: 30px;  /* Further reduce width of the logo */
         height: 30px;  /* Further reduce height of the logo */
