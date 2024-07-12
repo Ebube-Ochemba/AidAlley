@@ -28,8 +28,8 @@
 .logo {
     background: url("../images/logo.png") no-repeat center center;
     background-size: contain;  /* Ensure logo scales correctly */
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 90%;
 }
 
 .site-title {
