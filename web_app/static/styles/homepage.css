@@ -50,8 +50,8 @@
 
 /* Media Queries for Responsiveness */
 
-/* Tablets and small desktops */
-@media (max-width: 992px) {
+/* Tablets devices */
+@media only screen and (min-width: 401px) and (max-width: 960px) {
     .hero-content h1 {
         font-size: 2.5em;
     }
@@ -67,7 +67,7 @@
 }
 
 /* Mobile devices */
-@media (max-width: 768px) {
+@media only screen and (max-width: 768px) {
     .hero-content h1 {
         font-size: 2em;
     }
@@ -83,7 +83,7 @@
 }
 
 /* Small mobile devices */
-@media (max-width: 480px) {
+@media only screen and (max-width: 400px) {
     .hero-content {
         padding: 10px;
     }
