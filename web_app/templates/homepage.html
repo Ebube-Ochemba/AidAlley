@@ -44,10 +44,10 @@
         <div class="events">
             {% for event in events %}
                 <div class="event">
-                    <h3>{{ event.name }}</h3>
+                    <h3>{{ event.title }}</h3>
                     <p>Date: {{ event.date }}</p>
                     <p>Location: {{ event.location }}</p>
-                    <button onclick="location.href='/events/{{ event.id }}'">More Info</button>
+                    <a href="/events/{{ event.id }}" class="event-button">More Info</a>
                 </div>
             {% endfor %}
         </div>
