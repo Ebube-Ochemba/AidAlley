@@ -48,9 +48,9 @@
             {% for event in events %}
                 <div class="event-item">
                     <h3>{{ event.title }}</h3>
-                    <p>Date: {{ event.date }}</p>
-                    <p>Location: {{ event.location }}</p>
-                    <a href="/events/{{ event.id }}" class="event-link">More Info</a>
+                    <p><strong>Date:</strong> {{ event.date }}</p>
+                    <p><strong>Location:</strong> {{ event.location }}</p>
+                    <a class="event-link-button" href="/events/{{ event.id }}">More Info</a>
                 </div>
             {% endfor %}
         </div>

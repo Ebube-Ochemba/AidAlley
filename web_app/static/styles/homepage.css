@@ -44,8 +44,8 @@
 
 /* Upcoming Events Section */
 .upcoming-events-section {
-    padding: 40px 20px;  /* Padding around the section */
-    background-color: #F9F9F9;  /* Light background color */
+    padding: 20px 20px;  /* Padding around the section */
+    background-color: #EEEEEE;  /* Light background color */
 }
 .events-header {
     display: flex;
@@ -53,53 +53,51 @@
     margin-bottom: 20px;  /* Space below the header */
 }
 .events-logo {
-    background: url("../images/upcoming-events.png") no-repeat center center;  /* Placeholder for your icon */
-    background-size: contain;  /* Ensure logo scales correctly */
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;  /* Space between logo and title */
+    background: url("../images/upcoming-events.png") no-repeat center center;
+    background-size: contain;
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
 }
 .events-header h2 {
-    font-size: 2em;  /* Larger font size for the title */
+    font-size: 1.7em;  /* Larger font size for the title */
 }
 /* Events Grid */
 .events-grid {
     display: flex;
-    justify-content: space-around;  /* Distribute space evenly */
-    flex-wrap: wrap;  /* Allow items to wrap to next line */
+    justify-content: space-around;
+    flex-wrap: wrap;
     gap: 20px;  /* Space between grid items */
 }
 .event-item {
-    background-color: #FFFFFF;  /* White background for event items */
+    background-color: #E7D4B5;
     padding: 20px;
-    border-radius: 10px;  /* Rounded corners */
+    border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  /* Subtle shadow for depth */
-    width: 300px;  /* Fixed width for event items */
-    text-align: center;  /* Center text */
+    width: 300px;
+    text-align: center;
     display: flex;
     flex-direction: column;  /* Column layout */
-    justify-content: space-between;  /* Space out content */
+    justify-content: space-between;
 }
 .event-item h3 {
-    font-size: 1.5em;
+    font-size: 1.0em;
     margin-bottom: 10px;
 }
 .event-item p {
-    font-size: 1em;
+    font-size: 0.8em;
     margin-bottom: 5px;
 }
-.event-link {
+.event-link-button {
     display: inline-block;
-    background-color: #007BFF;  /* Blue background */
+    background-color: #698474;
     color: #FFFFFF;  /* White text */
-    text-decoration: none;  /* Remove underline */
     padding: 10px 20px;
     border-radius: 5px;  /* Rounded corners */
     transition: background-color 0.3s ease;  /* Smooth transition for hover effect */
 }
-
-.event-link:hover {
-    background-color: #0056b3;  /* Darker blue on hover */
+.event-link-button:hover {
+    background-color: #B6C7AA;  /* Darker blue on hover */
 }
 
 
