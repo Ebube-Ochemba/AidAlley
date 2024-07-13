@@ -1,0 +1,84 @@
+/* Events Section */
+.events-section {
+    padding: 20px;
+    background-color: #C5A378;
+}
+.events-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #EEEEEE;
+}
+.events-header h2 {
+    text-align: center;
+    font-size: 2.0em;
+    margin-bottom: 10px;
+}
+
+/* Events Grid */
+.events-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;  /* Space between grid items */
+}
+.event-item {
+    background-color: #EEEEEE;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  /* Subtle shadow for depth */
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;  /* Column layout */
+    justify-content: space-between;
+}
+.event-item h3 {
+    font-size: 1.0em;
+    margin-bottom: 10px;
+}
+.event-item p {
+    font-size: 0.8em;
+    margin-bottom: 5px;
+}
+.event-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+.event-link-button,
+.event-register-button {
+    display: inline-block;
+    background-color: #698474;
+    color: #FFFFFF;  /* White text */
+    padding: 10px 10px;
+    border-radius: 5px;
+    font-size: 15px;
+    transition: background-color 0.3s ease;  /* Smooth transition for hover effect */
+}
+.event-link-button:hover,
+.event-register-button:hover {
+    background-color: #9EB58E;
+}
+
+/* Load More Button */
+.load-more {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.load-more-button {
+    background-color: #698474;
+    color: #FFFFFF;
+    padding: 10px 10px;
+    border-radius: 5px;
+    border: none;
+    font-family: "Courier New", "Helvetica", "Arial", sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.load-more-button:hover {
+    background-color: #9EB58E;
+}
