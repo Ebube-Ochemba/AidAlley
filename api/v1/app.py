@@ -27,5 +27,5 @@ def page_not_found(error):
 if __name__ == "__main__":
     CORS(app, resources={r"/*": {"origins": "0.0.0.0"}})
     host = getenv('AIDBLEY_API_HOST', '0.0.0.0')
-    port = int(getenv('AIDBLEY_API_PORT', '5000'))
+    port = int(getenv('AIDBLEY_API_PORT', '5001'))
     app.run(host=host, port=port, threaded=True)
