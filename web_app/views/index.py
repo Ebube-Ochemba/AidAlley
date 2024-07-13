@@ -22,22 +22,19 @@ def display_homepage():
 @web_views.route('/learn-more', strict_slashes=False)
 def learn_more():
     """Handles request for learn more page"""
-    return render_template('learn-more.html')
-
-
-@web_views.route('/events', strict_slashes=False)
-def events():
-    """Handles request for events"""
-    return render_template('events.html')
+    return render_template('learn-more.html',
+                           cache_id=uuid4())
 
 
 @web_views.route('/login', strict_slashes=False)
 def login():
     """Handles request for login page"""
-    return render_template('login.html')
+    return render_template('login.html',
+                           cache_id=uuid4())
 
 
 @web_views.route('/create-account', strict_slashes=False)
 def create_account():
     """Handles request for create account page"""
-    return render_template('create-account.html')
+    return render_template('create-account.html',
+                           cache_id=uuid4())
