@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>AidAlley</title>
+    <link rel="icon" href="../static/images/icon.png?{{ cache_id }}" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="../static/styles/common.css?{{ cache_id }}"/>
+    <link rel="stylesheet" href="../static/styles/header-footer.css?{{ cache_id }}"/>
+    <link rel="stylesheet" href="../static/styles/events.css?{{ cache_id }}"/>
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-title">
+                <a href="/" class="logo-link">
+                    <div class="logo"></div>
+                </a>
+                <h1 class="site-title">AidAlley</h1>
+            </div>
+            <nav class="navigation">
+                <a class="nav-link" href="/login">Login</a>
+                <a class="nav-link" href="/create-account">Create Account</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="events-section">
+        <div class="events-header">
+            <h2>Upcoming Events</h2>
+        </div>
+        <div class="events-grid">
+            {% for event in events %}
+                <div class="event-item">
+                    <h3>{{ event.title }}</h3>
+                    <p><strong>Date:</strong> {{ event.date }}</p>
+                    <p><strong>Location:</strong> {{ event.location }}</p>
+                    <p><strong>Description:</strong> {{ event.description }}</p>
+                    <div class="event-buttons">
+                        <a class="event-link-button" href="/events/{{ event.id }}">More Info</a>
+                        <a class="event-register-button" href="/register/{{ event.id }}">Register</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="load-more">
+            <button class="load-more-button">Load More</button>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="social-media-links">
+            <a class="social-link facebook-link" href="#" ></a>
+            <a class="social-link twitter-link" href="#" ></a>
+            <a class="social-link instagram-link" href="#" ></a>
+            <a class="social-link youtube-link" href="#" ></a>
+        </div>
+    </footer>
+    <!--JavaScript-->
+    <script src="../static/scripts/scripts.js?{{ cache_id }}"></script>
+</body>
+</html>
