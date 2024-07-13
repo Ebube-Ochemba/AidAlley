@@ -82,3 +82,39 @@
 .load-more-button:hover {
     background-color: #9EB58E;
 }
+
+
+/* Media Queries for Responsiveness */
+
+/* Tablets devices */
+@media only screen and (min-width: 401px) and (max-width: 960px) {
+    .events-grid {
+        gap: 15px;  /* Smaller gap between items */
+    }
+    .event-item {
+        width: 250px;  /* Adjust width for smaller screens */
+    }
+}
+
+/* Mobile devices */
+@media only screen and (max-width: 768px) {
+    .events-grid {
+        gap: 10px;  /* Smaller gap between items */
+    }
+    .event-item {
+        width: 200px;  /* Adjust width for smaller screens */
+    }
+}
+
+/* Small mobile devices */
+@media only screen and (max-width: 400px) {
+    .events-grid {
+        flex-direction: column;  /* Stack items vertically */
+        align-items: center;  /* Center items */
+    }
+    .event-item {
+        width: 90%;  /* Adjust width for smaller screens */
+        margin-bottom: 20px;  /* Space between stacked items */
+    }
+}
+
