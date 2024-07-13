@@ -17,3 +17,15 @@ def display_homepage():
     return render_template('homepage.html',
                            cache_id=uuid4(),
                            events=upcoming_events)
+
+
+@web_views.route('/learn-more', strict_slashes=False)
+def learn_more():
+    """Handles request for learn more page"""
+    return render_template('learn-more.html')
+
+
+@web_views.route('/events', strict_slashes=False)
+def events():
+    """Handles request for events"""
+    return render_template('events.html')
