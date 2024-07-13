@@ -29,3 +29,15 @@ def learn_more():
 def events():
     """Handles request for events"""
     return render_template('events.html')
+
+
+@web_views.route('/login', strict_slashes=False)
+def login():
+    """Handles request for login page"""
+    return render_template('login.html')
+
+
+@web_views.route('/create-account', strict_slashes=False)
+def create_account():
+    """Handles request for create account page"""
+    return render_template('create-account.html')
