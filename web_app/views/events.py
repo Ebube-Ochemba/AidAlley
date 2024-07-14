@@ -1,7 +1,7 @@
 """Handles the events listing view"""
 
 from web_app.views import web_views
-from flask import render_template, jsonify, request
+from flask import render_template, jsonify, request, abort
 from models import storage
 from models.event import Event
 from uuid import uuid4
@@ -32,3 +32,14 @@ def load_more_events():
                     'id': event.id}
                     for event in more_events]
     return jsonify(events=events_data)
+
+
+@web_views.route('/events/<event_id>', strict_slashes=False)
+def event_detail(event_id):
+    """Handles request for a specific event detail page"""
+    event = storage.get(Event, event_id)
+    if event is None:
+        abort(404)
+    return render_template('event-details.html',
+                           cache_id=uuid4(),
+                           event=event)
