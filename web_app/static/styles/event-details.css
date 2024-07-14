@@ -3,7 +3,6 @@
     padding: 20px;
     background-color: #C5A378;
 }
-
 .event-detail {
     background-color: #EEEEEE;
     padding: 40px;
@@ -13,17 +12,14 @@
     margin: 0 auto;
     text-align: center;
 }
-
 .events-header {
     margin-bottom: 20px;
     border-bottom: 1px solid #CCCCCC;
 }
-
 .events-header h2 {
     font-size: 2.4em;
     margin-bottom: 10px;
 }
-
 .event-info {
     display: flex;
     justify-content: space-around;
@@ -31,34 +27,28 @@
     border-bottom: 1px solid #CCCCCC;
     padding-bottom: 10px;
 }
-
 .event-info p {
     font-size: 1.0em;
     margin-bottom: 0;
 }
-
 .event-description {
     text-align: center;
     margin-bottom: 20px;
     border-bottom: 1px solid #CCCCCC;
     padding-bottom: 10px;
 }
-
 .event-description h3 {
     font-size: 1.1em;
     margin-bottom: 10px;
 }
-
 .event-description p {
     font-size: 0.9em;
 }
-
 .event-buttons {
     display: flex;
     justify-content: center;
     margin-top: 20px;
 }
-
 .event-register-button {
     display: inline-block;
     background-color: #698474;
@@ -66,10 +56,91 @@
     padding: 15px 30px;
     border-radius: 5px;
     font-size: 1em;
-    text-decoration: none;  /* Remove underline from links */
     transition: background-color 0.3s ease;  /* Smooth transition for hover effect */
 }
-
 .event-register-button:hover {
     background-color: #9EB58E;
+}
+
+
+/* Media Queries for Responsiveness */
+
+/* Tablets and small screens */
+@media only screen and (max-width: 960px) {
+    .event-detail {
+        padding: 30px;
+        max-width: 600px;
+    }
+    .events-header h2 {
+        font-size: 2.0em;
+    }
+    .event-info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .event-info p {
+        font-size: 0.9em;
+        text-align: left;
+    }
+    .event-description h3 {
+        font-size: 1.0em;
+    }
+    .event-description p {
+        font-size: 0.8em;
+    }
+    .event-register-button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+}
+
+/* Mobile devices */
+@media only screen and (max-width: 768px) {
+    .event-detail {
+        padding: 20px;
+        max-width: 100%;
+    }
+    .events-header h2 {
+        font-size: 1.8em;
+    }
+    .event-info p {
+        font-size: 0.8em;
+    }
+    .event-description h3 {
+        font-size: 0.9em;
+    }
+    .event-description p {
+        font-size: 0.7em;
+    }
+    .event-register-button {
+        padding: 8px 15px;
+        font-size: 0.8em;
+    }
+}
+
+/* Small mobile devices */
+@media only screen and (max-width: 400px) {
+    .event-detail {
+        padding: 15px;
+    }
+    .events-header h2 {
+        font-size: 1.5em;
+    }
+    .event-info {
+        align-items: center;
+        text-align: center;
+    }
+    .event-info p {
+        font-size: 0.7em;
+    }
+    .event-description h3 {
+        font-size: 0.8em;
+    }
+    .event-description p {
+        font-size: 0.6em;
+    }
+    .event-register-button {
+        padding: 6px 10px;
+        font-size: 0.7em;
+    }
 }
