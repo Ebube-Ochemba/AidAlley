@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>{{ event.title }} | AidAlley</title>
+    <link rel="icon" href="../static/images/icon.png?{{ cache_id }}" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="../static/styles/common.css?{{ cache_id }}"/>
+    <link rel="stylesheet" href="../static/styles/header-footer.css?{{ cache_id }}"/>
+    <link rel="stylesheet" href="../static/styles/event-details.css?{{ cache_id }}"/>
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-title">
+                <a href="/" class="logo-link">
+                    <div class="logo"></div>
+                </a>
+                <h1 class="site-title">AidAlley</h1>
+            </div>
+            <nav class="navigation">
+                <a class="nav-link" href="/login">Login</a>
+                <a class="nav-link" href="/create-account">Create Account</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="event-detail-section">
+        <div class="event-detail">
+            <div class="events-header">
+                <h2>{{ event.title }}</h2>
+            </div>
+            <div class="event-info">
+                <p><strong>Date:</strong> {{ event_date }}</p>
+                <p><strong>Time:</strong> {{ event_time }}</p>
+                <p><strong>Location:</strong> {{ event.location }}</p>
+            </div>
+            <div class="event-description">
+                <h3>Description</h3>
+                <p>{{ event.description }}</p>
+            </div>
+            <div class="event-buttons">
+                <a class="event-register-button" href="/register/{{ event.id }}">Register for this Event</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="social-media-links">
+            <a class="social-link facebook-link" href="#" ></a>
+            <a class="social-link twitter-link" href="#" ></a>
+            <a class="social-link instagram-link" href="#" ></a>
+            <a class="social-link youtube-link" href="#" ></a>
+        </div>
+    </footer>
+</body>
+</html>
