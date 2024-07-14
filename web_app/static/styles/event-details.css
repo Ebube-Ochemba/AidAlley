@@ -1,0 +1,75 @@
+/* Event Detail Section */
+.event-detail-section {
+    padding: 20px;
+    background-color: #C5A378;
+}
+
+.event-detail {
+    background-color: #EEEEEE;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  /* Subtle shadow for depth */
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.events-header {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #CCCCCC;
+}
+
+.events-header h2 {
+    font-size: 2.4em;
+    margin-bottom: 10px;
+}
+
+.event-info {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #CCCCCC;
+    padding-bottom: 10px;
+}
+
+.event-info p {
+    font-size: 1.0em;
+    margin-bottom: 0;
+}
+
+.event-description {
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #CCCCCC;
+    padding-bottom: 10px;
+}
+
+.event-description h3 {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.event-description p {
+    font-size: 0.9em;
+}
+
+.event-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.event-register-button {
+    display: inline-block;
+    background-color: #698474;
+    color: #FFFFFF;  /* White text */
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 1em;
+    text-decoration: none;  /* Remove underline from links */
+    transition: background-color 0.3s ease;  /* Smooth transition for hover effect */
+}
+
+.event-register-button:hover {
+    background-color: #9EB58E;
+}
