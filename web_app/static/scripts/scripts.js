@@ -13,6 +13,7 @@ document.querySelector('.load-more-button').addEventListener('click', function (
         eventItem.innerHTML = `
                         <h3>${event.title}</h3>
                         <p><strong>Date:</strong> ${event.date}</p>
+                        <p><strong>Time:</strong> ${event.time}</p>
                         <p><strong>Location:</strong> ${event.location}</p>
                         <p><strong>Description:</strong> ${event.description}</p>
                         <div class="event-buttons">
