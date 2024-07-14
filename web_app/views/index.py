@@ -2,6 +2,8 @@
 
 from web_app.views import web_views
 from flask import render_template
+from datetime import datetime, timezone
+from dateutil import parser
 from models import storage
 from models.event import Event
 from uuid import uuid4
@@ -12,11 +14,36 @@ def display_homepage():
     """Handles request for homepage"""
     # Fetch upcoming events from the storage
     events = storage.all(Event).values()
-    # Show top 3 upcoming events
+    # Sort events and get the first 8
     upcoming_events = sorted(events, key=lambda event: event.date)[:8]
+    
+    # Process dates for the upcoming events
+    processed_events = []
+    for event in upcoming_events:
+        try:
+            if isinstance(event.date, datetime):
+                event_datetime = event.date
+            else:
+                event_datetime = parser.parse(str(event.date))
+            event_date = event_datetime.date()
+            event_time = event_datetime.strftime("%H:%M")
+            
+            # Create a new dictionary with processed date and time
+            processed_event = {
+                'id': event.id,
+                'title': event.title,
+                'description': event.description,
+                'location': event.location,
+                'date': event_date,
+                'time': event_time
+            }
+            processed_events.append(processed_event)
+        except Exception as e:
+            print(f"Error processing event {event.id}: {e}")
+    
     return render_template('homepage.html',
                            cache_id=uuid4(),
-                           events=upcoming_events)
+                           events=processed_events)
 
 
 @web_views.route('/learn-more', strict_slashes=False)
