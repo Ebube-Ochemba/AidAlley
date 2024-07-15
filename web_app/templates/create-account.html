@@ -8,10 +8,10 @@
     <!-- CSS -->
     <link rel="stylesheet" href="../static/styles/common.css?{{ cache_id }}"/>
     <link rel="stylesheet" href="../static/styles/header-footer.css?{{ cache_id }}"/>
-    <link rel="stylesheet" href="../static/styles/{{ filename }}?{{ cache_id }}"/>
+    <link rel="stylesheet" href="../static/styles/create-account.css?{{ cache_id }}"/>
     <!-- JavaScript -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-	<script src="../static/scripts/{{ filename }}?{{ cache_id }}"></script>
+	<script src="../static/scripts/scripts.js?{{ cache_id }}"></script>
 </head>
 <body>
     <header class="main-header">
@@ -29,8 +29,52 @@
         </div>
     </header>
 
-    <section>
-        <h1>Create Account</h1>
+    <section class="create-account-section">
+        <div class="form-container">
+            <h1>Create Account</h1>
+            <a class="redirect" href="/login">Already have an account? Log In</a>
+            <form action="/volunteers" method="POST" class="create-account-form">
+                <div class="form-row">
+                    <input id="first-name" name="first_name" type="text" placeholder="John" required />
+                    <label for="first-name">First Name</label>
+                </div>
+        
+                <div class="form-row">
+                    <input id="last-name" name="last_name" type="text" placeholder="Doe" required />
+                    <label for="last-name">Last Name</label>
+                </div>
+        
+                <div class="form-row">
+                    <input id="email" name="email" type="email" placeholder="johndoe@example.com" required />
+                    <label for="email">Email</label>
+                </div>
+        
+                <div class="form-row">
+                    <input id="phone" name="phone" type="tel" placeholder="123-456-7890" required />
+                    <label for="phone">Phone</label>
+                </div>
+        
+                <div class="form-row">
+                    <input id="password" name="password" type="password" placeholder="Enter your password" required />
+                    <label for="password">Password</label>
+                    <button type="button" class="toggle-password" onclick="togglePassword('password')">
+                        <i class="fas fa-eye"></i>
+                    </button>
+                </div>
+        
+                <div class="form-row">
+                    <input id="verify-password" name="verify_password" type="password" placeholder="Verify your password" required />
+                    <label for="verify-password">Verify Password</label>
+                    <button type="button" class="toggle-password" onclick="togglePassword('verify-password')">
+                        <i class="fas fa-eye"></i>
+                    </button>
+                </div>
+        
+                <div class="form-row">
+                    <button type="submit" class="submit-btn">Create Account</button>
+                </div>
+            </form>
+        </div>
     </section>
 
     <footer class="main-footer">
