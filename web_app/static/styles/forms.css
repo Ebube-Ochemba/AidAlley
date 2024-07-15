@@ -4,7 +4,8 @@
 body {
     background-color: #f4f4f4;
 }
-.create-account-section {
+.create-account-section,
+.login-section {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,7 +42,6 @@ body {
     display: flex;
     flex-direction: column;
 }
-
 .form-row {
     position: relative;
     margin-bottom: 1.5rem;
@@ -116,6 +116,22 @@ body {
 }
 .submit-btn:hover {
     background-color: #0056B3;
+}
+
+/* Login page */
+.login-form {
+    margin-bottom: 1rem;
+}
+.form-footer {
+    text-align: center;
+}
+.forgot-password {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+.forgot-password:hover {
+    text-decoration: underline;
 }
 
 /* Media queries */

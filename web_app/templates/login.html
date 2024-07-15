@@ -8,10 +8,11 @@
     <!-- CSS -->
     <link rel="stylesheet" href="../static/styles/common.css?{{ cache_id }}"/>
     <link rel="stylesheet" href="../static/styles/header-footer.css?{{ cache_id }}"/>
-    <link rel="stylesheet" href="../static/styles/{{ filename }}?{{ cache_id }}"/>
+    <link rel="stylesheet" href="../static/styles/forms.css?{{ cache_id }}"/>
     <!-- JavaScript -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-	<script src="../static/scripts/{{ filename }}?{{ cache_id }}"></script>
+	<script src="../static/scripts/scripts.js?{{ cache_id }}"></script>
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header class="main-header">
@@ -29,8 +30,32 @@
         </div>
     </header>
 
-    <section>
-        <h1>Login</h1>
+    <section class="login-section">
+        <div class="form-container">
+            <h1>Login</h1>
+            <a class="redirect" href="/create-account">Don't have an account? Create one.</a>
+            <form action="/login" method="POST" class="login-form">
+                <div class="form-row">
+                    <input id="email" name="email" type="email" placeholder="johndoe@example.com" required />
+                    <label for="email">Email</label>
+                </div>
+        
+                <div class="form-row">
+                    <input id="password" name="password" type="password" placeholder="Enter your password" required />
+                    <label for="password">Password</label>
+                    <button type="button" class="toggle-password" onclick="togglePassword('password')">
+                        <i class="fas fa-eye"></i>
+                    </button>
+                </div>
+        
+                <div class="form-row">
+                    <button type="submit" class="submit-btn">Login</button>
+                </div>
+            </form>
+            <div class="form-footer">
+                <a href="/forgot-password" class="forgot-password">Forgot Password?</a>
+            </div>
+        </div>
     </section>
 
     <footer class="main-footer">
