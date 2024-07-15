@@ -11,10 +11,8 @@ sqlalchemy==2.0.29
 # Web App
 Flask==3.0.3
 Flask-Cors==4.0.1
-flask_login==0.6.3
-flask_wtf==1.2.1
-wtforms==3.1.2
-email_validator==2.2.0
+Flask-JWT-Extended==4.6.0
+Flask-SQLAlchemy==3.1.1
 
 # Server
 gunicorn==20.1.0
