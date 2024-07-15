@@ -2,8 +2,10 @@
 """Entry point of the web application"""
 
 # from models import storage
-from flask import Flask, render_template
+from flask import Flask, render_template, request
+from flask_jwt_extended import verify_jwt_in_request
 from flask_cors import CORS
+from flask_jwt_extended import JWTManager
 from os import getenv
 from web_app.views import web_views
 
@@ -11,11 +13,25 @@ from web_app.views import web_views
 app = Flask(__name__)
 app.register_blueprint(web_views)
 
+# Set up JWT configuration
+app.secret_key = 'aidalley_jwt_secret_key'
+
+jwt = JWTManager(app)  # Initialize JWTManager with the app
+
 
 # @app.teardown_appcontext
 # def teardown_db(exception):
 #     """Closes current SQLAlchemy session after each request"""
 #     storage.close()
+
+
+@app.before_request
+def load_jwt_tokens():
+    """Load JWT tokens from cookies before each request"""
+    access_token = request.cookies.get('access_token')
+    if access_token:
+        request.headers = dict(request.headers)  # Convert headers to a mutable dict
+        request.headers['Authorization'] = f'Bearer {access_token}'
 
 
 @app.errorhandler(404)

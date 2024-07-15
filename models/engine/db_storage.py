@@ -86,17 +86,6 @@ class DBStorage:
         """Call remove() method on self.__session"""
         self.__session.remove()
 
-    def get(self, cls, id):
-        """
-        Returns the object based on the class name and its ID,
-        or None if not found
-        """
-        if cls is None or cls not in classes.values():
-            return None
-        if isinstance(cls, str):  # Takes both str and class name
-            cls = classes.get(cls)
-        return self.__session.query(cls).filter_by(id=id).first()
-
     def count(self, cls=None):
         """
         Count the number of objects in storage for a given class
@@ -110,3 +99,22 @@ class DBStorage:
             if isinstance(cls, str):  # Takes both str and class name
                 cls = classes[cls]
             return self.__session.query(func.count(cls.id)).scalar()
+        
+    def get(self, cls, id):
+        """
+        Returns the object based on the class name and its ID,
+        or None if not found
+        """
+        if cls is None or cls not in classes.values():
+            return None
+        if isinstance(cls, str):  # Takes both str and class name
+            cls = classes.get(cls)
+        return self.__session.query(cls).filter_by(id=id).first()
+    
+    def get_user_by_email(self, email):
+        """Returns a user based on email"""
+        return self.__session.query(Volunteer).filter_by(email=email).first()
+
+    def get_user_by_id(self, user_id):
+        """Returns a user based on id"""
+        return self.__session.query(Volunteer).get(user_id)
