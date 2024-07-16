@@ -1,61 +1,62 @@
 #!/usr/bin/python3
-"""Script to test EventVolunteer, VolunteerHours, and Notification models"""
+"""Script to register all volunteers for an event"""
 
 from models import storage
 from models.event_volunteer import EventVolunteer
 from models.volunteer_hours import VolunteerHours
 from models.notification import Notification
 
-def test_models():
-    # Fetch a volunteer and an event
-    volunteer = storage.get('Volunteer', 'ceef44a3-28c7-42f7-abc8-1fe566e98828')  # Replace 'volunteer1_id' with actual ID
-    event = storage.get('Event', '65ff72a3-2338-4079-a660-c92b4cc8368e')  # Replace 'event1_id' with actual ID
+def register_all_volunteers_for_event(event_id):
+    # Fetch the event using its ID
+    event = storage.get_event_by_id(event_id)  # Make sure to replace 'event_id' with the actual ID of the event
+    
+    if not event:
+        print("Event not found.")
+        return
 
-    # Create a new EventVolunteer instance
-    event_volunteer = EventVolunteer(
-        event_id=event.id,
-        volunteer_id=volunteer.id,
-        status="confirmed"
-    )
+    # List of volunteer IDs
+    volunteer_ids = [
+        '2dc0683d-860f-4c29-8872-9ff42d60ce6d',  # Replace these with actual volunteer IDs
+        'ea507cee-0870-4826-b854-57e783755787',
+        '592ccdd9-7766-4951-87f1-f5b90c3fef60',
+        '67580b70-2395-46ef-a715-2c73144fc5bd',
+        '7de6dc0e-9ad4-471f-9274-5b856a1f5192'
+    ]
 
-    # Create a new VolunteerHours instance
-    volunteer_hours = VolunteerHours(
-        volunteer_id=volunteer.id,
-        event_id=event.id,
-        hours=5.0,
-        verified=True
-    )
+    print(f"Registering {len(volunteer_ids)} volunteers for event {event.title}.")
 
-    # Create a new Notification instance
-    notification = Notification(
-        volunteer_id=volunteer.id,
-        message="You have been confirmed for the Charity Run event."
-    )
+    for volunteer_id in volunteer_ids:
+        # Create a new EventVolunteer instance for each volunteer
+        event_volunteer = EventVolunteer(
+            event_id=event.id,
+            volunteer_id=volunteer_id,
+            status="confirmed"
+        )
+        
+        # Create a new VolunteerHours instance for each volunteer
+        volunteer_hours = VolunteerHours(
+            volunteer_id=volunteer_id,
+            event_id=event.id,
+            hours=5.0,  # Assuming all volunteers contribute the same number of hours
+            verified=False
+        )
+        
+        # Create a new Notification instance for each volunteer
+        notification = Notification(
+            volunteer_id=volunteer_id,
+            message=f"You have been confirmed for the {event.title} event."
+        )
 
-    # Add objects to the session
-    storage.new(event_volunteer)
-    storage.new(volunteer_hours)
-    storage.new(notification)
+        # Add objects to the session
+        storage.new(event_volunteer)
+        storage.new(volunteer_hours)
+        storage.new(notification)
 
     # Save changes to the database
     storage.save()
 
-    # Retrieve and print all instances
-    event_volunteers = storage.all('EventVolunteer')
-    volunteer_hours_entries = storage.all('VolunteerHours')
-    notifications = storage.all('Notification')
-
-    print("\nEventVolunteers:")
-    for key, value in event_volunteers.items():
-        print("{}={}".format(key, value))
-
-    print("\nVolunteerHours:")
-    for key, value in volunteer_hours_entries.items():
-        print("{}={}".format(key, value))
-
-    print("\nNotifications:")
-    for key, value in notifications.items():
-        print("{}={}".format(key, value))
+    print("All volunteers have been registered successfully.")
 
 if __name__ == "__main__":
-    test_models()
+    # Replace 'event_id' with the actual ID of the event you want to register volunteers for
+    register_all_volunteers_for_event('205a98a2-3917-4963-8248-db2d473b86a4')
