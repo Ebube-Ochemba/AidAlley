@@ -1,37 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Events | AidAlley</title>
-    <link rel="icon" href="../static/images/icon.png?{{ cache_id }}" />
-    <!-- CSS -->
-    <link rel="stylesheet" href="../static/styles/common.css?{{ cache_id }}"/>
-    <link rel="stylesheet" href="../static/styles/header-footer.css?{{ cache_id }}"/>
-    <link rel="stylesheet" href="../static/styles/events.css?{{ cache_id }}"/>
-    <!-- JavaScript -->
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-</head>
-<body>
-    <header class="main-header">
-        <div class="header-container">
-            <div class="logo-title">
-                <a href="/" class="logo-link">
-                    <div class="logo"></div>
-                </a>
-                <h1 class="site-title">Creator Dashboard | AidAlley</h1>
-            </div>
-            <nav class="navigation">
-                {% if session.get('user_id') %}
-                    <a class="nav-link" href="/logout">Log Out</a>
-                {% else %}
-                    <a class="nav-link" href="/login">Login</a>
-                    <a class="nav-link" href="/create-account">Create Account</a>
-                {% endif %}
-            </nav>
-        </div>
-    </header>
+{% extends "base.html" %}
 
+{% block title %}Dashboard | AidAlley{% endblock %}
+    
+{% block extra_css %}
+{% endblock %}
+    
+{% block content %}
     <section class="dashboard-section">
         <div class="dashboard-container">
             <div class="my-events-section">
@@ -73,17 +47,8 @@
                 </div>
             </div>
         </div>
-    </section>
-
-    <footer class="main-footer">
-        <div class="social-media-links">
-            <a class="social-link facebook-link" href="#" ></a>
-            <a class="social-link twitter-link" href="#" ></a>
-            <a class="social-link instagram-link" href="#" ></a>
-            <a class="social-link youtube-link" href="#" ></a>
-        </div>
-    </footer>
-    <!--JavaScript-->
-    <script src="../static/scripts/scripts.js?{{ cache_id }}"></script>
-</body>
-</html>
+    </section>        
+{% endblock %}
+    
+{% block extra_js %}
+{% endblock %}
