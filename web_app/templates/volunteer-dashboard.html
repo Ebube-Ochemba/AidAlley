@@ -3,49 +3,46 @@
 {% block title %}Dashboard | AidAlley{% endblock %}
 
 {% block extra_css %}
+<link rel="stylesheet" href="../static/styles/volunteer-dashboard.css?{{ cache_id }}"/>
 {% endblock %}
 
 {% block content %}
-    <section class="dashboard-section">
-        <div class="dashboard-container">
-            <div class="my-events-section">
-                <div class="events-header">
-                    <h2>my upcoming Events</h2>
-                </div>
-                <div class="events-grid">
-                    {% for event in events %}
-                        <div class="event-item">
-                            <h3>{{ event.title }}</h3>
-                            <p><strong>Date:</strong> {{ event.date }}</p>
-                            <p><strong>Time:</strong> {{ event.time }}</p>
-                            <p><strong>Location:</strong> {{ event.location }}</p>
-                            <p><strong>Description:</strong> {{ event.description }}</p>
-                            <div class="event-buttons">
-                                <a class="event-link-button" href="/events/{{ event.id }}">More Info</a>
-                                <a class="event-register-button" href="/register/{{ event.id }}">unregister</a>
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>
-                <div class="load-more">
-                    <button class="load-more-button">Load More</button>
-                </div>
-            </div>
-            <div class="my-volunteer-section">
-                <div class="volunteer-hours">
-                    <h2>My Total Hours</h2>
-                </div>
-                <div class="">
-                    <h2>My Events Manager</h2>
-                </div>
-            </div>
-            <div class="notification-section">
-                <div class="notification-header">
-                    <h2>Notifications</h2>
-                </div>
-            </div>
+<section class="dashboard-section">
+    <div class="dashboard-container">
+        <div class="dashboard-header">
+            <h2>My Dashboard</h2>
         </div>
-    </section>
+        
+        <div class="upcoming-events">
+            <h3>Upcoming Events</h3>
+            <div class="events-list">
+                {% for event in events %}
+                <div class="event-item">
+                    <h4>{{ event.title }}</h4>
+                    <p><strong>Date:</strong> {{ event.date }}</p>
+                    <p><strong>Location:</strong> {{ event.location }}</p>
+                    <a class="event-link-button" href="/events/{{ event.id }}">More Info</a>
+                </div>
+                {% endfor %}
+            </div>
+            <button class="load-more-button">Load More</button>
+        </div>
+        
+        <div class="total-hours">
+            <h3>Total Volunteer Hours</h3>
+            <p>{{ total_hours }} hours</p>
+        </div>
+        
+        <div class="notifications">
+            <h3>Notifications</h3>
+            {% for notification in notifications %}
+            <div class="notification-item">
+                <p>{{ notification.message }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
 {% endblock %}
 
 {% block extra_js %}

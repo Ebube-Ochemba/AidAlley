@@ -1,0 +1,72 @@
+/* dashboard.css */
+
+/* General Styles */
+.dashboard-section {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+.dashboard-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.dashboard-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.upcoming-events, .total-hours, .notifications {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+h3 {
+    margin-bottom: 10px;
+}
+.events-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.event-item {
+    background-color: #e9e9e9;
+    padding: 10px;
+    border-radius: 5px;
+}
+.event-link-button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+.load-more-button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.total-hours {
+    text-align: center;
+}
+
+.notifications {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.notification-item {
+    background-color: #e9e9e9;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}

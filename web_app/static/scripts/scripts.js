@@ -54,6 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // You can add more form-related code here if needed
 });
 
+
 // {Base} For flash messages
 document.addEventListener('DOMContentLoaded', function() {
   const flashes = document.querySelectorAll('.flash');
@@ -74,5 +75,16 @@ document.addEventListener('DOMContentLoaded', function() {
               flash.style.display = 'none';
           }, 300);
       }, 5000);
+  });
+});
+
+
+// {volunteer-dashboard} For load-more button
+document.addEventListener('DOMContentLoaded', () => {
+  const loadMoreButton = document.querySelector('.load-more-button');
+  
+  loadMoreButton.addEventListener('click', () => {
+      // Implement the load more functionality here
+      console.log('Load more events');
   });
 });
