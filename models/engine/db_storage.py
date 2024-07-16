@@ -122,3 +122,23 @@ class DBStorage:
     def get_event_by_id(self, event_id):
         """Returns a Event based on id"""
         return self.__session.query(Event).get(event_id)
+    
+    def get_user_events(self, volunteer_id):
+        """Returns a list of events based on volunteer id"""
+        return self.__session.query(Event).join(EventVolunteer).filter(EventVolunteer.volunteer_id == volunteer_id).all()
+
+    def get_user_hours(self, volunteer_id):
+        """Returns a list of hours based on volunteer id"""
+        return self.__session.query(VolunteerHours).filter_by(volunteer_id=volunteer_id).all()
+
+    def get_user_notifications(self, volunteer_id):
+        """Returns a list of notifications based on volunteer id"""
+        return self.__session.query(Notification).filter_by(volunteer_id=volunteer_id).all()
+
+    def get_events_created_by_user(self, user_id):
+        """Returns a list of events created by a specific user"""
+        return self.__session.query(Event).filter_by(creator_id=user_id).all()
+
+    def get_volunteers_for_event(self, event_id):
+        """Returns a list of volunteers registered for a specific event"""
+        return self.__session.query(Volunteer).join(EventVolunteer).filter(EventVolunteer.event_id == event_id).all()
