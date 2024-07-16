@@ -118,3 +118,7 @@ class DBStorage:
     def get_user_by_id(self, user_id):
         """Returns a user based on id"""
         return self.__session.query(Volunteer).get(user_id)
+    
+    def get_event_by_id(self, event_id):
+        """Returns a Event based on id"""
+        return self.__session.query(Event).get(event_id)
