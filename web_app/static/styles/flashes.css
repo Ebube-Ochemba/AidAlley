@@ -1,0 +1,56 @@
+.flashes {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    max-width: 300px;
+}
+.flash {
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.flash.success {
+    background-color: #28a745;
+}
+.flash.error {
+    background-color: #dc3545;
+}
+.flash.info {
+    background-color: #17a2b8;
+}
+.flash.warning {
+    background-color: #ffc107;
+    color: #343a40;
+}
+
+.flash .close-flash {
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    opacity: 0.7;
+}
+.flash .close-flash:hover {
+    opacity: 1;
+}

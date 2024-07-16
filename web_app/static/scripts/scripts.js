@@ -53,3 +53,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // You can add more form-related code here if needed
 });
+
+// {Base} For flash messages
+document.addEventListener('DOMContentLoaded', function() {
+  const flashes = document.querySelectorAll('.flash');
+  
+  flashes.forEach(flash => {
+      const closeButton = flash.querySelector('.close-flash');
+      closeButton.addEventListener('click', function() {
+          flash.style.opacity = '0';
+          setTimeout(() => {
+              flash.style.display = 'none';
+          }, 300);
+      });
+
+      // Auto-dismiss after 5 seconds
+      setTimeout(() => {
+          flash.style.opacity = '0';
+          setTimeout(() => {
+              flash.style.display = 'none';
+          }, 300);
+      }, 5000);
+  });
+});
