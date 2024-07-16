@@ -3,7 +3,6 @@
 
 # from models import storage
 from flask import Flask, render_template, request
-from flask_jwt_extended import verify_jwt_in_request
 from flask_cors import CORS
 from flask_jwt_extended import JWTManager
 from os import getenv
@@ -38,6 +37,13 @@ def load_jwt_tokens():
 def page_not_found(error):
     """Handles 404 error"""
     return render_template('404.html'), 404
+
+
+@app.errorhandler(Exception)
+def handle_unexpected_error(e):
+    """Handles unexpected errors"""
+    app.logger.error(f'Unexpected error: {str(e)}')
+    return render_template('500.html'), 500
 
 
 if __name__ == "__main__":

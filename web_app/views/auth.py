@@ -1,6 +1,6 @@
 """Handles the authentication view"""
 
-from flask import session, request, render_template, redirect, url_for, flash, make_response
+from flask import request, render_template, redirect, url_for, flash, make_response
 from flask_jwt_extended import create_access_token, create_refresh_token
 from web_app.views import web_views
 from models import storage
@@ -8,7 +8,8 @@ from models.volunteer import Volunteer
 from uuid import uuid4
 
 
-@web_views.route('/create_account/submit', methods=['GET', 'POST'], strict_slashes=False)
+@web_views.route('/create_account/submit', methods=['GET', 'POST'],
+                 strict_slashes=False)
 def create_account_submit():
     """Handles form submission for creating a new account"""
     first_name = request.form.get('first_name')
@@ -31,7 +32,7 @@ def create_account_submit():
 
     # Check if email is already registered
     if storage.get_by_email(email):
-        flash('Email is already registered.', 'error')
+        flash('Email is already registered. Please use a different email.', 'error')
         return render_template('create-account.html',
                                cache_id=uuid4())
 
@@ -67,16 +68,19 @@ def login_submit():
         flash('Bad email or password.', 'error')
         return render_template('login.html',
                                cache_id=uuid4())
+    
+    if not user or not user.check_password(password):
+        flash('Incorrect email or password. Please try again.', 'error')
+        return render_template('login.html', cache_id=uuid4()), 401
 
     # Create JWT tokens
     access_token = create_access_token(identity=user.id)
     refresh_token = create_refresh_token(identity=user.id)
 
-    # Store tokens in cookies
+    # Store tokens in cookies with expiration times
     response = make_response(redirect(url_for('web_views.display_dashboard')))
     response.set_cookie('access_token', access_token, httponly=True)
     response.set_cookie('refresh_token', refresh_token, httponly=True)
-
 
     flash('Logged in successfully!', 'success')
     return response
