@@ -4,7 +4,7 @@
 document.addEventListener('DOMContentLoaded', function() {
   let offset = 8;
 
-  document.querySelector('.load-more-button').addEventListener('click', function () {
+  document.querySelector('.events-section .load-more-button').addEventListener('click', function () {
     fetch(`/load-more-events?offset=${offset}`)
       .then(response => response.json())
       .then(data => {
