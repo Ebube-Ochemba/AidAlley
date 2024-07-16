@@ -1,45 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Create Account | AidAlley</title>
-    <link rel="icon" href="../static/images/icon.png?{{ cache_id }}" />
-    <!-- CSS -->
-    <link rel="stylesheet" href="../static/styles/common.css?{{ cache_id }}"/>
-    <link rel="stylesheet" href="../static/styles/header-footer.css?{{ cache_id }}"/>
-    <link rel="stylesheet" href="../static/styles/{{ filename }}?{{ cache_id }}"/>
-    <!-- JavaScript -->
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-	<script src="../static/scripts/{{ filename }}?{{ cache_id }}"></script>
-</head>
-<body>
-    <header class="main-header">
-        <div class="header-container">
-            <div class="logo-title">
-                <a href="/" class="logo-link">
-                    <div class="logo"></div>
-                </a>
-                <h1 class="site-title">AidAlley</h1>
-            </div>
-            <nav class="navigation">
-                <a class="nav-link" href="/login">Log out</a>
-            </nav>
-        </div>
-    </header>
+{% extends "base.html" %}
 
+{% block title %}Create Event | AidAlley{% endblock %}
+
+{% block extra_css %}
+{% endblock %}
+
+{% block content %}
     <section>
         <h1>Create Event</h1>
     </section>
+{% endblock %}
 
-    <footer class="main-footer">
-        <div class="social-media-links">
-            <a class="social-link facebook-link" href="#" ></a>
-            <a class="social-link twitter-link" href="#" ></a>
-            <a class="social-link instagram-link" href="#" ></a>
-            <a class="social-link youtube-link" href="#" ></a>
-        </div>
-    </footer>
-    
-</body>
-</html>
+{% block extra_js %}
+{% endblock %}
