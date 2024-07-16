@@ -1,6 +1,6 @@
 """Handles the authentication view"""
 
-from flask import request, render_template, redirect, url_for, flash, make_response
+from flask import  flash, make_response, redirect, render_template, request, session, url_for
 from flask_jwt_extended import create_access_token, create_refresh_token
 from web_app.views import web_views
 from models import storage
@@ -82,6 +82,9 @@ def login_submit():
     response.set_cookie('access_token', access_token, httponly=True)
     response.set_cookie('refresh_token', refresh_token, httponly=True)
 
+    session['user_id'] = user.id
+    session['logged_in'] = True
+
     flash('Logged in successfully!', 'success')
     return response
 
@@ -93,6 +96,9 @@ def logout():
     response = make_response(redirect(url_for('web_views.login')))
     response.delete_cookie('access_token')
     response.delete_cookie('refresh_token')
+
+    session.pop('user_id', None)
+    session.pop('logged_in', None)
 
     flash('Logged out successfully!', 'success')
     return response

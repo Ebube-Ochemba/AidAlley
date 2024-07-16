@@ -10,12 +10,10 @@ from web_app.views import web_views
 
 
 app = Flask(__name__)
+app.secret_key = 'aidalley_jwt_secret_key'
 app.register_blueprint(web_views)
 
-# Set up JWT configuration
-app.secret_key = 'aidalley_jwt_secret_key'
-
-jwt = JWTManager(app)  # Initialize JWTManager with the app
+jwt = JWTManager(app)  # authentication
 
 
 # @app.teardown_appcontext

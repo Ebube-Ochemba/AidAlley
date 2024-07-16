@@ -21,8 +21,12 @@
                     <h1 class="site-title">AidAlley</h1>
                 </div>
                 <nav class="navigation">
-                    <a class="nav-link" href="/login">Login</a>
-                    <a class="nav-link" href="/create-account">Create Account</a>
+                    {% if session.logged_in %}
+                        <a class="nav-link" href="/logout">Log Out</a>
+                    {% else %}
+                        <a class="nav-link" href="/login">Login</a>
+                        <a class="nav-link" href="/create-account">Create Account</a>
+                    {% endif %}
                 </nav>
             </div>
         </header>
