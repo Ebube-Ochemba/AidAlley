@@ -1,4 +1,4 @@
-// Load more events
+// {Events.html} Load more events
 
 let offset = 8;
 
@@ -28,7 +28,7 @@ document.querySelector('.load-more-button').addEventListener('click', function (
     .catch(error => console.error('Error loading more events:', error));
 });
 
-// Toggle password visibility
+// {Forms} Toggle password visibility
 function togglePassword(inputId) {
   const input = document.getElementById(inputId);
   const button = input.nextElementSibling.nextElementSibling;
