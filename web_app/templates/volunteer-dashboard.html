@@ -3,16 +3,14 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Login | AidAlley</title>
+    <title>Events | AidAlley</title>
     <link rel="icon" href="../static/images/icon.png?{{ cache_id }}" />
     <!-- CSS -->
     <link rel="stylesheet" href="../static/styles/common.css?{{ cache_id }}"/>
     <link rel="stylesheet" href="../static/styles/header-footer.css?{{ cache_id }}"/>
-    <link rel="stylesheet" href="../static/styles/forms.css?{{ cache_id }}"/>
+    <link rel="stylesheet" href="../static/styles/events.css?{{ cache_id }}"/>
     <!-- JavaScript -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-	<script src="../static/scripts/scripts.js?{{ cache_id }}"></script>
-    <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header class="main-header">
@@ -21,7 +19,7 @@
                 <a href="/" class="logo-link">
                     <div class="logo"></div>
                 </a>
-                <h1 class="site-title">AidAlley</h1>
+                <h1 class="site-title">My Dashboard | AidAlley</h1>
             </div>
             <nav class="navigation">
                 {% if current_user %}
@@ -34,30 +32,43 @@
         </div>
     </header>
 
-    <section class="login-section">
-        <div class="form-container">
-            <h1>Login</h1>
-            <a class="redirect" href="/create-account">Don't have an account? Create one.</a>
-            <form action="/login/submit" method="POST" class="login-form">
-                <div class="form-row">
-                    <input id="email" name="email" type="email" placeholder="johndoe@example.com" required />
-                    <label for="email">Email</label>
+    <section class="dashboard-section">
+        <div class="dashboard-container">
+            <div class="my-events-section">
+                <div class="events-header">
+                    <h2>my upcoming Events</h2>
                 </div>
-        
-                <div class="form-row">
-                    <input id="password" name="password" type="password" placeholder="Enter your password" required />
-                    <label for="password">Password</label>
-                    <button type="button" class="toggle-password" onclick="togglePassword('password')">
-                        <i class="fas fa-eye"></i>
-                    </button>
+                <div class="events-grid">
+                    {% for event in events %}
+                        <div class="event-item">
+                            <h3>{{ event.title }}</h3>
+                            <p><strong>Date:</strong> {{ event.date }}</p>
+                            <p><strong>Time:</strong> {{ event.time }}</p>
+                            <p><strong>Location:</strong> {{ event.location }}</p>
+                            <p><strong>Description:</strong> {{ event.description }}</p>
+                            <div class="event-buttons">
+                                <a class="event-link-button" href="/events/{{ event.id }}">More Info</a>
+                                <a class="event-register-button" href="/register/{{ event.id }}">unregister</a>
+                            </div>
+                        </div>
+                    {% endfor %}
                 </div>
-        
-                <div class="form-row">
-                    <button type="submit" class="submit-btn">Login</button>
+                <div class="load-more">
+                    <button class="load-more-button">Load More</button>
                 </div>
-            </form>
-            <div class="form-footer">
-                <a href="/forgot-password" class="forgot-password">Forgot Password?</a>
+            </div>
+            <div class="my-volunteer-section">
+                <div class="volunteer-hours">
+                    <h2>My Total Hours</h2>
+                </div>
+                <div class="">
+                    <h2>My Events Manager</h2>
+                </div>
+            </div>
+            <div class="notification-section">
+                <div class="notification-header">
+                    <h2>Notifications</h2>
+                </div>
             </div>
         </div>
     </section>
@@ -70,7 +81,8 @@
             <a class="social-link youtube-link" href="#" ></a>
         </div>
     </footer>
-
+    <!--JavaScript-->
+    <script src="../static/scripts/scripts.js?{{ cache_id }}"></script>
     <!-- Flash messages block -->
     {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
@@ -81,6 +93,5 @@
             </div>
         {% endif %}
     {% endwith %}
-    
 </body>
 </html>

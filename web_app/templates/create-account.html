@@ -34,7 +34,7 @@
         <div class="form-container">
             <h1>Create Account</h1>
             <a class="redirect" href="/login">Already have an account? Log In</a>
-            <form action="/volunteers" method="POST" class="create-account-form">
+            <form action="/create-account/submit" method="POST" class="create-account-form">
                 <div class="form-row">
                     <input id="first-name" name="first_name" type="text" placeholder="John" required />
                     <label for="first-name">First Name</label>
@@ -72,7 +72,7 @@
                 </div>
         
                 <div class="form-row">
-                    <button type="submit" class="submit-btn">Create Account</button>
+                    <button type="submit" class="submit-btn">submit</button>
                 </div>
             </form>
         </div>
@@ -86,6 +86,16 @@
             <a class="social-link youtube-link" href="#" ></a>
         </div>
     </footer>
+    <!-- Flash messages block -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="flashes">
+                {% for category, message in messages %}
+                    <div class="flash {{ category }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
     
 </body>
 </html>

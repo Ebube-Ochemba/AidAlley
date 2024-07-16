@@ -62,5 +62,15 @@
     </footer>
     <!--JavaScript-->
     <script src="../static/scripts/scripts.js?{{ cache_id }}"></script>
+    <!-- Flash messages block -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="flashes">
+                {% for category, message in messages %}
+                    <div class="flash {{ category }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
 </body>
 </html>

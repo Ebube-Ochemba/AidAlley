@@ -24,8 +24,8 @@
                 <h1 class="site-title">AidAlley</h1>
             </div>
             <nav class="navigation">
-                <a class="nav-link" href="/login">Login</a>
-                <a class="nav-link" href="/create-account">Create Account</a>
+                    <a class="nav-link" href="/login">Login</a>
+                    <a class="nav-link" href="/create-account">Create Account</a>
             </nav>
         </div>
     </header>
@@ -65,6 +65,17 @@
             <a class="social-link youtube-link" href="#" ></a>
         </div>
     </footer>
+
+    <!-- Flash messages block -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="flashes">
+                {% for category, message in messages %}
+                    <div class="flash {{ category }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
     
 </body>
 </html>
