@@ -71,6 +71,7 @@ form select, form input {
 .create-event-button {
     background-color: #007bff;
     color: white;
+    font-family: "Courier New", "Helvetica", "Arial", sans-serif;
     padding: 10px;
     border: none;
     border-radius: 5px;
