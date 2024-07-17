@@ -79,12 +79,12 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-// {volunteer-dashboard} For load-more button
-document.addEventListener('DOMContentLoaded', () => {
-  const loadMoreButton = document.querySelector('.load-more-button');
+// // {volunteer-dashboard} For load-more button
+// document.addEventListener('DOMContentLoaded', () => {
+//   const loadMoreButton = document.querySelector('.load-more-button');
   
-  loadMoreButton.addEventListener('click', () => {
-      // Implement the load more functionality here
-      console.log('Load more events');
-  });
-});
+//   loadMoreButton.addEventListener('click', () => {
+//       // Implement the load more functionality here
+//       console.log('Load more events');
+//   });
+// });
