@@ -27,7 +27,9 @@
                         <p><strong>Description:</strong> {{ event.description }}</p>
                         <div class="event-buttons">
                             <a class="event-link-button" href="/events/{{ event.id }}">More Info</a>
-                            <a class="event-unregister-button" href="/unregister/{{ event.id }}">Unregister</a>
+                            <form action="/unregister/{{ event.id }}" method="POST">
+                                <button type="submit" class="event-unregister-button">Unregister</button>
+                            </form>
                         </div>
                     </div>
                     {% endfor %}
