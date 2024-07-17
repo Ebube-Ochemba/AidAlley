@@ -51,7 +51,8 @@
     margin-top: 10px;
 }
 
-.event-link-button, .event-unregister-button {
+.event-link-button,
+.event-unregister-button {
     padding: 8px 15px;
     border-radius: 5px;
     text-decoration: none;
@@ -66,6 +67,9 @@
 .event-unregister-button {
     background-color: #f44336;
     color: white;
+    border: none;
+    font-family: "Courier New", "Helvetica", "Arial", sans-serif;
+    cursor: pointer;
 }
 
 .load-more-button {
@@ -74,12 +78,14 @@
     padding: 10px 20px;
     background-color: #007bff;
     color: white;
+    font-family: "Courier New", "Helvetica", "Arial", sans-serif;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
-.my-volunteer-section, .notification-section {
+.my-volunteer-section,
+.notification-section {
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
