@@ -67,7 +67,8 @@ form select, form input {
     border-radius: 5px;
 }
 
-.log-hours-button {
+.log-hours-button,
+.create-event-button {
     background-color: #007bff;
     color: white;
     padding: 10px;
@@ -75,3 +76,14 @@ form select, form input {
     border-radius: 5px;
     cursor: pointer;
 }
+.log-hours-button:hover,
+.create-event-button:hover {
+    background-color: #0056b3;
+}
+
+.create-event {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+

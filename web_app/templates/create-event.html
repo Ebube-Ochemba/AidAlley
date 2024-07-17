@@ -3,13 +3,42 @@
 {% block title %}Create Event | AidAlley{% endblock %}
 
 {% block extra_css %}
+<link rel="stylesheet" href="../static/styles/create-event.css?{{ cache_id }}"/>
 {% endblock %}
 
 {% block content %}
-    <section>
+<section class="create-event-section">
+    <div class="form-container">
         <h1>Create Event</h1>
-    </section>
+        <form action="/create_event/submit" method="POST" class="create-event-form">
+            <div class="form-row">
+                <input id="title" name="title" type="text" required placeholder="Event Title"/>
+                <label for="title">Event Title</label>
+            </div>
+
+            <div class="form-row">
+                <textarea id="description" name="description" rows="4" placeholder="Event Description"></textarea>
+                <label for="description">Event Description</label>
+            </div>
+
+            <div class="form-row">
+                <input id="date" name="date" type="datetime-local" required/>
+                <label for="date">Event Date and Time</label>
+            </div>
+
+            <div class="form-row">
+                <input id="location" name="location" type="text" placeholder="Event Location"/>
+                <label for="location">Event Location</label>
+            </div>
+
+            <div class="form-row">
+                <button type="submit" class="submit-btn">Create Event</button>
+            </div>
+        </form>
+    </div>
+</section>
 {% endblock %}
 
 {% block extra_js %}
+<script src="../static/scripts/create-event.js?{{ cache_id }}"></script>
 {% endblock %}
