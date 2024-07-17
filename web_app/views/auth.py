@@ -8,7 +8,7 @@ from models.volunteer import Volunteer
 from uuid import uuid4
 
 
-@web_views.route('/create_account/submit', methods=['GET', 'POST'],
+@web_views.route('/create_account/submit', methods=['POST'],
                  strict_slashes=False)
 def create_account_submit():
     """Handles form submission for creating a new account"""
@@ -31,7 +31,7 @@ def create_account_submit():
                                cache_id=uuid4())
 
     # Check if email is already registered
-    if storage.get_by_email(email):
+    if storage.get_user_by_email(email):
         flash('Email is already registered. Please use a different email.', 'error')
         return render_template('create-account.html',
                                cache_id=uuid4())
