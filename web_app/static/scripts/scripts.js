@@ -20,7 +20,6 @@ document.addEventListener('DOMContentLoaded', function() {
                           <p><strong>Description:</strong> ${event.description}</p>
                           <div class="event-buttons">
                               <a class="event-link-button" href="/events/${event.id}">More Info</a>
-                              <a class="event-register-button" href="/register/${event.id}">Register</a>
                           </div>
                       `;
           eventsGrid.appendChild(eventItem);

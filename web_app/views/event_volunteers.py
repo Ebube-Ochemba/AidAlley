@@ -39,3 +39,24 @@ def register_event(event_id):
 
     flash('Successfully registered for the event!', 'success')
     return redirect(url_for('web_views.display_dashboard'))
+
+
+@web_views.route('/unregister/<event_id>', methods=['POST'])
+@jwt_required()
+def unregister_event(event_id):
+    """Unregister a volunteer from an event"""
+    volunteer_id = get_jwt_identity()
+
+    # Find the EventVolunteer record
+    event_volunteer = storage.get_event_volunteer(event_id, volunteer_id)
+
+    if not event_volunteer:
+        flash('You are not registered for this event.', 'error')
+        return redirect(url_for('web_views.volunteer_dashboard'))
+
+    # Delete the record
+    storage.delete(event_volunteer)
+    storage.save()
+
+    flash('Successfully unregistered from the event.', 'success')
+    return redirect(url_for('web_views.display_dashboard'))
