@@ -22,7 +22,9 @@
                 <p>{{ event.description }}</p>
             </div>
             <div class="event-buttons">
-                <a class="event-register-button" href="/register/{{ event.id }}">Register for this Event</a>
+                <form action="/register/{{ event.id }}" method="POST" class="register-form">
+                    <button type="submit" class="event-register-button">Register for this Event</button>
+                </form>
             </div>
         </div>
     </section>

@@ -126,6 +126,10 @@ class DBStorage:
     def get_user_events(self, volunteer_id):
         """Returns a list of events based on volunteer id"""
         return self.__session.query(Event).join(EventVolunteer).filter(EventVolunteer.volunteer_id == volunteer_id).all()
+    
+    def get_event_volunteer(self, event_id, volunteer_id):
+        """Checks if a volunteer is already registered for an event"""
+        return self.__session.query(EventVolunteer).filter_by(event_id=event_id, volunteer_id=volunteer_id).first()
 
     def get_user_hours(self, volunteer_id):
         """Returns a list of hours based on volunteer id"""
