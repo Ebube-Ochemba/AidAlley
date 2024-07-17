@@ -131,10 +131,6 @@ class DBStorage:
         """Checks if a volunteer is already registered for an event"""
         return self.__session.query(EventVolunteer).filter_by(event_id=event_id, volunteer_id=volunteer_id).first()
 
-    def get_user_hours(self, volunteer_id):
-        """Returns a list of hours based on volunteer id"""
-        return self.__session.query(VolunteerHours).filter_by(volunteer_id=volunteer_id).all()
-
     def get_user_notifications(self, volunteer_id):
         """Returns a list of notifications based on volunteer id"""
         return self.__session.query(Notification).filter_by(volunteer_id=volunteer_id).all()
@@ -142,6 +138,10 @@ class DBStorage:
     def get_events_created_by_user(self, user_id):
         """Returns a list of events created by a specific user"""
         return self.__session.query(Event).filter_by(creator_id=user_id).all()
+    
+    def get_user_hours(self, volunteer_id):
+        """Returns a list of hours based on volunteer id"""
+        return self.__session.query(VolunteerHours).filter_by(volunteer_id=volunteer_id).all()
 
     def get_volunteers_for_event(self, event_id):
         """Returns a list of volunteers registered for a specific event"""
