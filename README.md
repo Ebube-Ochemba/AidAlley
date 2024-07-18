@@ -14,8 +14,12 @@
   - [Tech Stack](#tech-stack)
   - [Architecture](#architecture)
   - [Project Structure](#project-structure)
-  - [Features](#features)
+    - [Prerequisites](#prerequisites)
+    - [Features](#features)
   - [Landing Page](#landing-page)
+  - [Acknowledgements](#acknowledgements)
+  - [Related Projects](#related-projects)
+  - [License](#license)
 
 
 ## Inspiration
@@ -45,7 +49,6 @@ The project was developed by Ebube Ochemba: [`LinkedIn`](linkedin.com/in/ebubech
 ## Architecture
 > Coming Soon!!!
 
-
 ## Project Structure
 ```sh
 AidAlley/
@@ -74,10 +77,27 @@ AidAlley/
 └── README.md
 ```
 
-## Features
+### Prerequisites
+- Python 3.10+
+- Flask 3.0.3
+- JWT 4.6.0
+- MySQL 8.0.37
+- SQLAlchemy 2.0.29
+
+### Features
 - [x] Login & Logout Experiences
 - [x] View Events
 - [x] Event Creation
-- [x] Event Signup 
+- [x] Event Management
+- [x] Event Signup
 
 ## Landing Page
+> Coming Soon!!!
+
+## Acknowledgements
+
+## Related Projects
+[AirBnB Clone](https://github.com/Ebube-Ochemba/AirBnB_clone): A simple web app made with Python, Flask, and JQuery.
+
+## License
+MIT License
