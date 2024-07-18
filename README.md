@@ -14,8 +14,9 @@
   - [Tech Stack](#tech-stack)
   - [Architecture](#architecture)
   - [Project Structure](#project-structure)
-    - [Prerequisites](#prerequisites)
+    - [Dependencies](#dependencies)
     - [Features](#features)
+    - [Future Plans](#future-plans)
   - [Landing Page](#landing-page)
   - [Acknowledgements](#acknowledgements)
   - [Related Projects](#related-projects)
@@ -30,7 +31,7 @@ AidAlley is a volunteer management platform designed to seamlessly connect volun
 > Key features include viewing detailed event information, receiving notifications, and tracking volunteer hours efficiently.
 
 ## The Premise
-This project is our Portfolio Project, concluding our Foundations Year at [Alx Africa](https://www.alxafrica.com/). We were able to choose who we wanted to work with and what we wanted to work on, as long as we present a working program at the end of the three weeks of development.
+This project is the **MVP** of our Portfolio Project, concluding our Foundations Year at [Alx Africa](https://www.alxafrica.com/). We were able to choose who we wanted to work with and what we wanted to work on, as long as we present a working program at the end of the three weeks of development.
 
 ### Blogpost
 > Coming Soon!!!
@@ -77,12 +78,19 @@ AidAlley/
 └── README.md
 ```
 
-### Prerequisites
+### Dependencies
 - Python 3.10+
+  - bcrypt 4.1.3
+    - pynacl==1.5.0
 - Flask 3.0.3
-- JWT 4.6.0
-- MySQL 8.0.37
+  - Flask-Cors 4.0.1
+  - Flask-JWT-Extended==4.6.0
+  - Flask-SQLAlchemy==3.1.1
+- MySQL 8.0.37 # mysqlclient
+  - mysql==8.0.37
+  - MySQLdb==2.1.1
 - SQLAlchemy 2.0.29
+- ...
 
 ### Features
 - [x] Login & Logout Experiences
@@ -91,13 +99,17 @@ AidAlley/
 - [x] Event Management
 - [x] Event Signup
 
+### Future Plans
+
+
 ## Landing Page
 > Coming Soon!!!
 
 ## Acknowledgements
+All work contained in this project was completed as part of the curriculum for Alx. ALX is a leading technology training provider, built to accelerate the careers of young Africans through the technology and professional skills that enable them to thrive in the digital economy. The program prepares students for careers in the tech industry using project-based peer learning. For more information, visit [Alx Africa](https://www.alxafrica.com/).
 
 ## Related Projects
 [AirBnB Clone](https://github.com/Ebube-Ochemba/AirBnB_clone): A simple web app made with Python, Flask, and JQuery.
 
 ## License
-MIT License
+[MIT License](/LICENSE)
