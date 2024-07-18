@@ -18,15 +18,18 @@ AidAlley is a volunteer management platform designed to seamlessly connect volun
   - [The Premise](#the-premise)
     - [Blogpost](#blogpost)
   - [The Team](#the-team)
-  - [Tech Stack](#tech-stack)
+  - [Technologies](#technologies)
   - [Architecture](#architecture)
   - [Project Structure](#project-structure)
     - [Dependencies](#dependencies)
+    - [Installation/Configuration](#installationconfiguration)
+    - [Execution and Usage](#execution-and-usage)
     - [Features](#features)
     - [Future Plans](#future-plans)
   - [Landing Page](#landing-page)
   - [Acknowledgements](#acknowledgements)
   - [Related Projects](#related-projects)
+  - [Author's Information](#authors-information)
   - [License](#license)
 
 ## The Premise
@@ -38,7 +41,7 @@ This project is the **MVP** of our Portfolio Project, concluding our Foundations
 ## The Team
 The project was developed by Ebube Ochemba: [`LinkedIn`](linkedin.com/in/ebubechukwu-ochemba-34bab5268) || [`X`](https://x.com/ebube116) || [`Medium`](https://medium.com/@ebube116)
 
-## Tech Stack
+## Technologies
 - `Python` - Backend
 - `Flask` - The Web Development Framework
 - `HTML/CSS` - Web Development
@@ -96,6 +99,15 @@ AidAlley/
 - SQLAlchemy 2.0.29
 - ...
 
+### Installation/Configuration
+comming soon!!!
+
+### Execution and Usage
+```sh
+$ cd AidAlley
+$ flask run
+```
+
 ### Features
 - [x] Logged In & Logged Out Experiences
 - [x] View Events
@@ -118,6 +130,9 @@ All work contained in this project was completed as part of the curriculum for A
 
 ## Related Projects
 [AirBnB Clone](https://github.com/Ebube-Ochemba/AirBnB_clone): A simple web app made with Python, Flask, and JQuery.
+
+## Author's Information
+[AUTHORS](/AUTHORS)
 
 ## License
 [MIT License](/LICENSE)
