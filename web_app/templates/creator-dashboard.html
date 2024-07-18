@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+
+{% block title %}Event Creator Dashboard | AidAlley{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="../static/styles/creator-dashboard.css?{{ cache_id }}"/>
+{% endblock %}
+
+{% block content %}
+    <section class="dashboard-section">
+        <div class="dashboard-container">
+            <div class="dashboard-header">
+                <h2>Creator Dashboard</h2>
+            </div>
+
+            <div class="manage-events">
+                <h3>Manage My Events</h3>
+                <div class="events-list">
+                    {% for event in events %}
+                    <div class="event-item">
+                        <h4>{{ event.title }}</h4>
+                        <p><strong>Date:</strong> {{ event.date }}</p>
+                        <p><strong>Location:</strong> {{ event.location }}</p>
+                        <div class="event-buttons">
+                            <a class="view-details-button" href="/events/{{ event.id }}">View Details</a>
+                            <a class="log-hours-button" href="/log-hours/{{ event.id }}">Log Volunteer Hours</a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="log-volunteer-hours">
+                <h3>Log Volunteer Hours</h3>
+                <form action="/log-hours" method="POST">
+                    <label for="event">Select Event:</label>
+                    <select name="event" id="event">
+                        {% for event in events %}
+                        <option value="{{ event.id }}">{{ event.title }}</option>
+                        {% endfor %}
+                    </select>
+
+                    <label for="volunteer">Volunteer:</label>
+                    <select name="volunteer" id="volunteer">
+                        {% for volunteer in volunteers %}
+                        <option value="{{ volunteer.id }}">{{ volunteer.name }}</option>
+                        {% endfor %}
+                    </select>
+
+                    <label for="hours">Hours:</label>
+                    <input type="text" name="hours" id="hours" required>
+
+                    <button type="submit" class="log-hours-button">Log Hours</button>
+                </form>
+            </div>
+
+            <div class="verify-volunteer-hours">
+                <h3>Verify Volunteer Hours</h3>
+                <form action="/verify-hours" method="POST">
+                    <label for="verify-event">Select Event:</label>
+                    <select name="verify-event" id="verify-event">
+                        {% for event in events %}
+                        <option value="{{ event.id }}">{{ event.title }}</option>
+                        {% endfor %}
+                    </select>
+
+                    <div class="unverified-hours-list">
+                        {% for unverified in unverified_hours %}
+                        <div class="unverified-item">
+                            <p><strong>Volunteer:</strong> {{ unverified.volunteer.name }}</p>
+                            <p><strong>Hours:</strong> {{ unverified.hours }}</p>
+                            <button type="submit" name="verify" value="{{ unverified.id }}" class="verify-button">Verify</button>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </form>
+            </div>
+
+            <div class="view-volunteer-registrations">
+                <h3>View Volunteer Registrations</h3>
+                {% for event in events %}
+                <div class="registration-list">
+                    <h4>{{ event.title }}</h4>
+                    <ul>
+                        {% for volunteer in event.volunteers %}
+                        <li>{{ volunteer.name }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="create-event">
+                <a class="create-event-button" href="/create_event">Create Event</a>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block extra_js %}
+{% endblock %}

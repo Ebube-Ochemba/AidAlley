@@ -1,0 +1,142 @@
+/* modern-form.css */
+
+/* general styles */
+body {
+    background-color: #f4f4f4;
+}
+.create-account-section,
+.login-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+.form-container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    width: 100%;
+    max-width: 400px;
+}
+.form-container h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* login redirect link */
+.redirect {
+    display: block;
+    text-align: center;
+    color: #007BFF;
+    text-decoration: none;
+    margin-bottom: 1rem;
+}
+.redirect:hover {
+    color: #0056B3;
+}
+
+.create-account-form {
+    display: flex;
+    flex-direction: column;
+}
+.form-row {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+.form-row input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+.form-row input:focus {
+    outline: none;
+    border-color: #007BFF;
+}
+.form-row label {
+    position: absolute;
+    left: 0.75rem;
+    top: 0.75rem;
+    color: #999;
+    pointer-events: none;
+    transition: 0.3s ease all;
+}
+.toggle-password {
+    position: absolute;
+    right: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #999;
+    cursor: pointer;
+}
+
+/* input focus styles */
+.form-row input:focus ~ label,
+.form-row input:not(:placeholder-shown) ~ label {
+    top: -0.5rem;
+    left: 0.5rem;
+    font-size: 0.75rem;
+    color: #007bff;
+    background-color: #fff;
+    padding: 0 0.25rem;
+}
+.form-row input::placeholder {
+    color: transparent;
+}
+.form-row input:focus::placeholder {
+    color: #999;
+}
+.form-row input:not(:placeholder-shown):not(:focus) + label {
+    top: -0.5rem;
+    left: 0.5rem;
+    font-size: 0.75rem;
+    color: #007BFF;
+    background-color: #FFF;
+    padding: 0 0.25rem;
+}
+
+/* submit button styles */
+.submit-btn {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 0.75rem;
+    font-family: "Courier New", "Helvetica", "Arial", sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.submit-btn:hover {
+    background-color: #0056B3;
+}
+
+/* Login page */
+.login-form {
+    margin-bottom: 1rem;
+}
+.form-footer {
+    text-align: center;
+}
+.forgot-password {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+/* Media queries */
+@media only screen and (max-width: 480px) {
+    .form-container {
+        padding: 1rem;
+    }
+}

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Events | AidAlley{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="../static/styles/events.css?{{ cache_id }}"/>
+{% endblock %}
+
+{% block content %}
+    <section class="events-section">
+        <div class="events-header">
+            <h2>Upcoming Events</h2>
+        </div>
+        <div class="events-grid">
+            {% for event in events %}
+                <div class="event-item">
+                    <h3>{{ event.title }}</h3>
+                    <p><strong>Date:</strong> {{ event.date }}</p>
+                    <p><strong>Time:</strong> {{ event.time }}</p>
+                    <p><strong>Location:</strong> {{ event.location }}</p>
+                    <p><strong>Description:</strong> {{ event.description }}</p>
+                    <div class="event-buttons">
+                        <a class="event-link-button" href="/events/{{ event.id }}">More Info</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="load-more">
+            <button class="load-more-button">Load More</button>
+        </div>
+    </section>
+{% endblock %}
+
+{% block extra_js %}
+{% endblock %}

@@ -86,17 +86,6 @@ class DBStorage:
         """Call remove() method on self.__session"""
         self.__session.remove()
 
-    def get(self, cls, id):
-        """
-        Returns the object based on the class name and its ID,
-        or None if not found
-        """
-        if cls is None or cls not in classes.values():
-            return None
-        if isinstance(cls, str):  # Takes both str and class name
-            cls = classes.get(cls)
-        return self.__session.query(cls).filter_by(id=id).first()
-
     def count(self, cls=None):
         """
         Count the number of objects in storage for a given class
@@ -110,3 +99,50 @@ class DBStorage:
             if isinstance(cls, str):  # Takes both str and class name
                 cls = classes[cls]
             return self.__session.query(func.count(cls.id)).scalar()
+        
+    def get(self, cls, id):
+        """
+        Returns the object based on the class name and its ID,
+        or None if not found
+        """
+        if cls is None or cls not in classes.values():
+            return None
+        if isinstance(cls, str):  # Takes both str and class name
+            cls = classes.get(cls)
+        return self.__session.query(cls).filter_by(id=id).first()
+    
+    def get_user_by_email(self, email):
+        """Returns a user based on email"""
+        return self.__session.query(Volunteer).filter_by(email=email).first()
+
+    def get_user_by_id(self, user_id):
+        """Returns a user based on id"""
+        return self.__session.query(Volunteer).get(user_id)
+    
+    def get_event_by_id(self, event_id):
+        """Returns a Event based on id"""
+        return self.__session.query(Event).get(event_id)
+    
+    def get_user_events(self, volunteer_id):
+        """Returns a list of events based on volunteer id"""
+        return self.__session.query(Event).join(EventVolunteer).filter(EventVolunteer.volunteer_id == volunteer_id).all()
+    
+    def get_event_volunteer(self, event_id, volunteer_id):
+        """Checks if a volunteer is already registered for an event"""
+        return self.__session.query(EventVolunteer).filter_by(event_id=event_id, volunteer_id=volunteer_id).first()
+
+    def get_user_notifications(self, volunteer_id):
+        """Returns a list of notifications based on volunteer id"""
+        return self.__session.query(Notification).filter_by(volunteer_id=volunteer_id).all()
+
+    def get_events_created_by_user(self, user_id):
+        """Returns a list of events created by a specific user"""
+        return self.__session.query(Event).filter_by(creator_id=user_id).all()
+    
+    def get_user_hours(self, volunteer_id):
+        """Returns a list of hours based on volunteer id"""
+        return self.__session.query(VolunteerHours).filter_by(volunteer_id=volunteer_id).all()
+
+    def get_volunteers_for_event(self, event_id):
+        """Returns a list of volunteers registered for a specific event"""
+        return self.__session.query(Volunteer).join(EventVolunteer).filter(EventVolunteer.event_id == event_id).all()

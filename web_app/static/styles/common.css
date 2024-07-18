@@ -1,0 +1,38 @@
+/* Common styles */
+
+* { /* Reset CSS */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: #414141;    /* Dark gray */
+    background-color: #EEEEEE;    /* Light gray */
+    font-size: 18px;
+    font-family: "Courier New", "Helvetica", "Arial", sans-serif;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.6em;
+}
+
+ul {
+    list-style-type: circle;
+}
+  
+ol {
+    list-style-type: lower-roman;
+}
+
+a {
+    text-decoration: none;    /* No underline */
+}
+
+p {
+    text-align: left;    /* Align text to the left */
+}
