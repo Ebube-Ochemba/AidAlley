@@ -40,15 +40,15 @@ This project is the **MVP** of our Portfolio Project, concluding our Foundations
 The project was developed by Ebube Ochemba: [`LinkedIn`](linkedin.com/in/ebubechukwu-ochemba-34bab5268) || [`X`](https://x.com/ebube116) || [`Medium`](https://medium.com/@ebube116)
 
 ## Tech Stack
-- Python - Backend
-- Flask - The Web Development Framework
-- HTML/CSS - Web Development
-- JavaScript - Web Development
-- SQLAlchemy - Python SQL Toolkit and Object Relational Mapper
-- MySQL - Relational Database Management System
-- Gunicorn - Application Server
-- Nginx - Web Server
-- DigitalOcean - Platform as a Service
+- `Python` - Backend
+- `Flask` - The Web Development Framework
+- `HTML/CSS` - Web Development
+- `JavaScript` - Web Development
+- `SQLAlchemy` - Python SQL Toolkit and Object Relational Mapper
+- `MySQL` - Relational Database Management System
+- `Gunicorn` - Application Server
+- `Nginx` - Web Server
+- `DigitalOcean` - Platform as a Service
 
 
 ## Architecture
