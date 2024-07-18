@@ -3,11 +3,18 @@
 
 ![image](./web_app/static/images/about.jpg)
 
+## Inspiration
+Managing volunteers and events efficiently is a challenge every community organizer faces. Yet, volunteer work is essential for community support and growth. This is why we created AidAlley.
+
+AidAlley is a volunteer management platform designed to seamlessly connect volunteers with events. Event organizers can easily create events, while volunteers can browse and find opportunities in their area. If a volunteer finds an event they are interested in, they can register and track their participation. Organizers can manage volunteers, log hours, and ensure everyone stays informed and engaged.
+
+> Key features include viewing detailed event information, creating events, signing up for events, and more.
+
 ## Table of Contents
 
 - [AidAlley](#aidalley)
-  - [Table of Contents](#table-of-contents)
   - [Inspiration](#inspiration)
+  - [Table of Contents](#table-of-contents)
   - [The Premise](#the-premise)
     - [Blogpost](#blogpost)
   - [The Team](#the-team)
@@ -21,14 +28,6 @@
   - [Acknowledgements](#acknowledgements)
   - [Related Projects](#related-projects)
   - [License](#license)
-
-
-## Inspiration
-Managing volunteers and events efficiently is a challenge every community organizer faces. Yet, volunteer work is essential for community support and growth. This is why we created AidAlley.
-
-AidAlley is a volunteer management platform designed to seamlessly connect volunteers with events. Event organizers can easily create events, while volunteers can browse and find opportunities in their area. If a volunteer finds an event they are interested in, they can register and track their participation. Organizers can manage volunteers, log hours, and ensure everyone stays informed and engaged.
-
-> Key features include viewing detailed event information, receiving notifications, and tracking volunteer hours efficiently.
 
 ## The Premise
 This project is the **MVP** of our Portfolio Project, concluding our Foundations Year at [Alx Africa](https://www.alxafrica.com/). We were able to choose who we wanted to work with and what we wanted to work on, as long as we present a working program at the end of the three weeks of development.
