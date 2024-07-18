@@ -15,6 +15,7 @@
   - [Architecture](#architecture)
   - [Project Structure](#project-structure)
   - [Features](#features)
+  - [Landing Page](#landing-page)
 
 
 ## Inspiration
@@ -30,14 +31,19 @@ This project is our Portfolio Project, concluding our Foundations Year at [Alx A
 ### Blogpost
 > Coming Soon!!!
 
-
 ## The Team
-The project was developed by Ebube Ochemba: [`LinkedIn`](linkedin.com/in/ebubechukwu-ochemba-34bab5268) || [`x`](https://x.com/ebube116) || [`Medium`](https://medium.com/@ebube116)
+The project was developed by Ebube Ochemba: [`LinkedIn`](linkedin.com/in/ebubechukwu-ochemba-34bab5268) || [`X`](https://x.com/ebube116) || [`Medium`](https://medium.com/@ebube116)
 
 ## Tech Stack
-
+- Python
+- Flask
+- SQLAlchemy
+- MySQL
+- HTML/CSS
+- JavaScript
 
 ## Architecture
+> Coming Soon!!!
 
 
 ## Project Structure
@@ -69,3 +75,9 @@ AidAlley/
 ```
 
 ## Features
+- [x] Login & Logout Experiences
+- [x] View Events
+- [x] Event Creation
+- [x] Event Signup 
+
+## Landing Page
