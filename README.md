@@ -47,6 +47,7 @@ The project was developed by Ebube Ochemba: [`LinkedIn`](linkedin.com/in/ebubech
 - `SQLAlchemy` - Python SQL Toolkit and Object Relational Mapper
 - `MySQL` - Relational Database Management System
 - `Gunicorn` - Application Server
+  - `Tmux` - Terminal Multiplexer
 - `Nginx` - Web Server
 - `DigitalOcean` - Platform as a Service
 
