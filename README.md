@@ -40,12 +40,16 @@ This project is the **MVP** of our Portfolio Project, concluding our Foundations
 The project was developed by Ebube Ochemba: [`LinkedIn`](linkedin.com/in/ebubechukwu-ochemba-34bab5268) || [`X`](https://x.com/ebube116) || [`Medium`](https://medium.com/@ebube116)
 
 ## Tech Stack
-- Python
-- Flask
-- SQLAlchemy
-- MySQL
-- HTML/CSS
-- JavaScript
+- Python - Backend
+- Flask - The Web Development Framework
+- HTML/CSS - Web Development
+- JavaScript - Web Development
+- SQLAlchemy - Python SQL Toolkit and Object Relational Mapper
+- MySQL - Relational Database Management System
+- Gunicorn - Application Server
+- Nginx - Web Server
+- DigitalOcean - Platform as a Service
+
 
 ## Architecture
 > Coming Soon!!!
@@ -81,26 +85,30 @@ AidAlley/
 ### Dependencies
 - Python 3.10+
   - bcrypt 4.1.3
-    - pynacl==1.5.0
+    - pynacl 1.5.0
 - Flask 3.0.3
   - Flask-Cors 4.0.1
-  - Flask-JWT-Extended==4.6.0
-  - Flask-SQLAlchemy==3.1.1
+  - Flask-JWT-Extended 4.6.0
+  - Flask-SQLAlchemy 3.1.1
 - MySQL 8.0.37 # mysqlclient
-  - mysql==8.0.37
-  - MySQLdb==2.1.1
+  - mysql 8.0.37
+  - MySQLdb 2.1.1
 - SQLAlchemy 2.0.29
 - ...
 
 ### Features
-- [x] Login & Logout Experiences
+- [x] Logged In & Logged Out Experiences
 - [x] View Events
 - [x] Event Creation
 - [x] Event Management
 - [x] Event Signup
 
 ### Future Plans
-
+- **Mobile App Development**: Create a mobile application for on-the-go event management and volunteer registration.
+- **Enhanced Reporting**: Implement detailed analytics and reporting features for organizers to track volunteer impact.
+- **Automated Notifications**: Introduce automated email and SMS notifications to keep volunteers informed about upcoming events and updates.
+- **Community Forum**: Add a forum for volunteers and organizers to communicate, share experiences, and provide feedback.
+- **Integration with Social Media**: Enable easy sharing of events and volunteer achievements on social media platforms to boost community engagement.
 
 ## Landing Page
 > Coming Soon!!!
