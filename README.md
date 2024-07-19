@@ -85,7 +85,7 @@ AidAlley/
 ```
 
 ### Dependencies
-[requirements.txt](/requirements.txt)
+[requirements.txt](/requirements.txt) - `*incomplete`
 
 ### Installation/Configuration
 ```sh
