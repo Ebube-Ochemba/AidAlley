@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/env bin bash
 # A Bash script to set up the environment for the project
 
 # Set environment variables

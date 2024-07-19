@@ -23,7 +23,6 @@ AidAlley is a volunteer management platform designed to seamlessly connect volun
   - [Project Structure](#project-structure)
     - [Dependencies](#dependencies)
     - [Installation/Configuration](#installationconfiguration)
-    - [Execution and Usage](#execution-and-usage)
     - [Features](#features)
     - [Future Plans](#future-plans)
   - [Landing Page](#landing-page)
@@ -86,25 +85,18 @@ AidAlley/
 ```
 
 ### Dependencies
-- Python 3.10+
-  - bcrypt 4.1.3
-    - pynacl 1.5.0
-- Flask 3.0.3
-  - Flask-Cors 4.0.1
-  - Flask-JWT-Extended 4.6.0
-  - Flask-SQLAlchemy 3.1.1
-- MySQL 8.0.37 # mysqlclient
-  - mysql 8.0.37
-  - MySQLdb 2.1.1
-- SQLAlchemy 2.0.29
-- ...
+[requirements.txt](/requirements.txt)
 
 ### Installation/Configuration
-comming soon!!!
-
-### Execution and Usage
 ```sh
+$ git clone https://github.com/Ebube-Ochemba/AidAlley.git
 $ cd AidAlley
+$ pip3 install virtualenv
+$ virtualenv .venv
+$ source .venv/bin/activate
+$ pip3 install -r requirements.txt
+$ cat setup_mysql_dev.sql | mysql -hlocalhost -uroot -p
+$ source setup_env.sh
 $ flask run
 ```
 
