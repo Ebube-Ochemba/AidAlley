@@ -24,8 +24,8 @@ AidAlley is a volunteer management platform designed to seamlessly connect volun
     - [Dependencies](#dependencies)
     - [Installation/Configuration](#installationconfiguration)
     - [Usage](#usage)
-    - [Features](#features)
-    - [Future Plans](#future-plans)
+  - [Features](#features)
+  - [Future Plans](#future-plans)
   - [Landing Page](#landing-page)
   - [Acknowledgements](#acknowledgements)
   - [Related Projects](#related-projects)
@@ -107,14 +107,14 @@ $ flask run
 ```
 - Visit [localhost:5000](http://localhost:5000) to see the homepage.
 
-### Features
+## Features
 - [x] Logged In & Logged Out Experiences
 - [x] View Events
 - [x] Event Creation
 - [x] Event Management
 - [x] Event Signup
 
-### Future Plans
+## Future Plans
 - **Mobile App Development**: Create a mobile application for on-the-go event management and volunteer registration.
 - **Enhanced Reporting**: Implement detailed analytics and reporting features for organizers to track volunteer impact.
 - **Automated Notifications**: Introduce automated email and SMS notifications to keep volunteers informed about upcoming events and updates.
