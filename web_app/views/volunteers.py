@@ -59,12 +59,37 @@ def creator_dashboard():
     current_user_id = get_jwt_identity()
     user = storage.get_user_by_id(current_user_id)
     events = storage.get_events_created_by_user(current_user_id)
+
+    # Process events to format date and time correctly
+    processed_events = []
+    for event in events:
+        try:
+            if isinstance(event.date, datetime):
+                event_datetime = event.date
+            else:
+                event_datetime = parser.parse(str(event.date))
+            event_date = event_datetime.date()
+            event_time = event_datetime.strftime("%H:%M")
+
+            # Create a new dictionary with processed date and time
+            processed_event = {
+                'id': event.id,
+                'title': event.title,
+                'description': event.description,
+                'location': event.location,
+                'date': event_date,
+                'time': event_time
+            }
+            processed_events.append(processed_event)
+        except Exception as e:
+            print(f"Error processing event {event.id}: {e}")
+
     # For each event, get the list of volunteers
-    event_volunteers = {event.id: storage.get_volunteers_for_event(event.id) for event in events}
+    event_volunteers = {event['id']: storage.get_volunteers_for_event(event['id']) for event in processed_events}
 
     return render_template('creator-dashboard.html',
                            user=user,
-                           events=events,
+                           events=processed_events,
                            event_volunteers=event_volunteers)
 
 
