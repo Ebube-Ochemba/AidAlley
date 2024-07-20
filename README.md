@@ -23,6 +23,7 @@ AidAlley is a volunteer management platform designed to seamlessly connect volun
   - [Project Structure](#project-structure)
     - [Dependencies](#dependencies)
     - [Installation/Configuration](#installationconfiguration)
+    - [Usage](#usage)
     - [Features](#features)
     - [Future Plans](#future-plans)
   - [Landing Page](#landing-page)
@@ -96,9 +97,14 @@ $ virtualenv .venv
 $ source .venv/bin/activate
 $ pip3 install -r requirements.txt
 $ cat setup_mysql_dev.sql | mysql -hlocalhost -uroot -p
+```
+
+### Usage
+```sh
 $ source setup_env.sh
 $ flask run
 ```
+- Visit [localhost:5000](http://localhost:5000) to see the homepage.
 
 ### Features
 - [x] Logged In & Logged Out Experiences
@@ -115,7 +121,7 @@ $ flask run
 - **Integration with Social Media**: Enable easy sharing of events and volunteer achievements on social media platforms to boost community engagement.
 
 ## Landing Page
-> Coming Soon!!!
+[Click here](https://ebube-ochemba.github.io/)
 
 ## Acknowledgements
 All work contained in this project was completed as part of the curriculum for Alx. ALX is a leading technology training provider, built to accelerate the careers of young Africans through the technology and professional skills that enable them to thrive in the digital economy. The program prepares students for careers in the tech industry using project-based peer learning. For more information, visit [Alx Africa](https://www.alxafrica.com/).
