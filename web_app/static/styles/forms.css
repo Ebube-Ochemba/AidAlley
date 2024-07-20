@@ -1,11 +1,12 @@
-/* modern-form.css */
+/* all forms in the AidAlley */
 
-/* general styles */
+/* general form styles */
 body {
-    background-color: #f4f4f4;
+    background-color: hsl(0, 0%, 96%);
 }
 .create-account-section,
-.login-section {
+.login-section,
+.create-event-section {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,7 +27,7 @@ body {
     margin-bottom: 1rem;
 }
 
-/* login redirect link */
+/* login/create account redirect link */
 .redirect {
     display: block;
     text-align: center;
@@ -38,15 +39,13 @@ body {
     color: #0056B3;
 }
 
-.create-account-form {
-    display: flex;
-    flex-direction: column;
-}
+/* form rows */
 .form-row {
     position: relative;
     margin-bottom: 1.5rem;
 }
-.form-row input {
+.form-row input,
+.form-row textarea {
     width: 100%;
     padding: 0.75rem;
     border: 1px solid #ddd;
@@ -54,51 +53,58 @@ body {
     font-size: 1rem;
     transition: border-color 0.3s;
 }
-.form-row input:focus {
+.form-row textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+.form-row input:focus,
+.form-row textarea:focus {
     outline: none;
     border-color: #007BFF;
 }
-.form-row label {
+/* Adjustments for the label position and appearance */
+.form-row label,
+.form-row input[type="datetime-local"] + label {
     position: absolute;
     left: 0.75rem;
     top: 0.75rem;
     color: #999;
     pointer-events: none;
     transition: 0.3s ease all;
-}
-.toggle-password {
-    position: absolute;
-    right: 0.75rem;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    color: #999;
-    cursor: pointer;
+    padding: 0 0.25rem;
 }
 
 /* input focus styles */
+.form-row input::placeholder,
+.form-row textarea::placeholder {
+    color: transparent;
+}
+.form-row input:focus::placeholder,
+.form-row textarea:focus::placeholder {
+    color: #999;
+}
+/* Hide the native date picker indicator initially */
+.form-row input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    opacity: 0.6;
+}
+/* Show the date picker indicator on hover/focus */
+.form-row input[type="datetime-local"]:focus::-webkit-calendar-picker-indicator,
+.form-row input[type="datetime-local"]:hover::-webkit-calendar-picker-indicator {
+    opacity: 1;
+}
+/* Move the label above the input field on focus */
 .form-row input:focus ~ label,
-.form-row input:not(:placeholder-shown) ~ label {
+.form-row input:not(:placeholder-shown) ~ label,
+.form-row textarea:focus ~ label,
+.form-row textarea:not(:placeholder-shown) ~ label,
+.form-row input[type="datetime-local"]:focus + label,
+.form-row input[type="datetime-local"]:not(:placeholder-shown) + label {
     top: -0.5rem;
     left: 0.5rem;
     font-size: 0.75rem;
     color: #007bff;
     background-color: #fff;
-    padding: 0 0.25rem;
-}
-.form-row input::placeholder {
-    color: transparent;
-}
-.form-row input:focus::placeholder {
-    color: #999;
-}
-.form-row input:not(:placeholder-shown):not(:focus) + label {
-    top: -0.5rem;
-    left: 0.5rem;
-    font-size: 0.75rem;
-    color: #007BFF;
-    background-color: #FFF;
     padding: 0 0.25rem;
 }
 
@@ -118,6 +124,18 @@ body {
     background-color: #0056B3;
 }
 
+/* password toggle with javascript */
+.toggle-password {
+    position: absolute;
+    right: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #999;
+    cursor: pointer;
+}
+
 /* Login page */
 .login-form {
     margin-bottom: 1rem;
@@ -133,6 +151,7 @@ body {
 .forgot-password:hover {
     text-decoration: underline;
 }
+
 
 /* Media queries */
 @media only screen and (max-width: 480px) {
