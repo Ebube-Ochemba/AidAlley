@@ -89,6 +89,7 @@ AidAlley/
 [requirements.txt](/requirements.txt) - `*incomplete`
 
 ### Installation/Configuration
+> Development Environment - `Ubuntu 22.04.4 LTS`
 ```sh
 $ git clone https://github.com/Ebube-Ochemba/AidAlley.git
 $ cd AidAlley
