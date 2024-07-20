@@ -29,7 +29,7 @@ AidAlley is a volunteer management platform designed to seamlessly connect volun
   - [Landing Page](#landing-page)
   - [Acknowledgements](#acknowledgements)
   - [Related Projects](#related-projects)
-  - [Author's Information](#authors-information)
+  - [Author(s) Information](#authors-information)
   - [License](#license)
 
 ## The Premise
@@ -90,6 +90,8 @@ AidAlley/
 
 ### Installation/Configuration
 > Development Environment - `Ubuntu 22.04.4 LTS`
+> Style guidelines: [PEP 8 (version 1.7)](https://peps.python.org/pep-0008/) || [Betty style](https://github.com/holbertonschool/Betty/wiki) || [semistandard](https://github.com/standard/semistandard)
+
 ```sh
 $ git clone https://github.com/Ebube-Ochemba/AidAlley.git
 $ cd AidAlley
@@ -130,7 +132,7 @@ All work contained in this project was completed as part of the curriculum for A
 ## Related Projects
 [AirBnB Clone](https://github.com/Ebube-Ochemba/AirBnB_clone): A simple web app made with Python, Flask, and JQuery.
 
-## Author's Information
+## Author(s) Information
 [AUTHORS](/AUTHORS)
 
 ## License
