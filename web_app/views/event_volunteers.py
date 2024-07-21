@@ -5,8 +5,8 @@ from web_app.views import web_views
 from flask import flash, redirect, url_for
 from flask_jwt_extended import jwt_required, get_jwt_identity
 from models import storage
-from models.event import Event
 from models.event_volunteer import EventVolunteer
+from models.notification import Notification
 
 
 @web_views.route('/register/<event_id>', methods=['POST'])
@@ -17,7 +17,7 @@ def register_event(event_id):
     volunteer_id = get_jwt_identity()
 
     # Check if the event exists
-    event = storage.get(Event, event_id)
+    event = storage.get_event_by_id(event_id)
     if not event:
         flash('Event not found.', 'error')
         return redirect(url_for('web_views.display_dashboard'))
@@ -35,6 +35,16 @@ def register_event(event_id):
         status="confirmed"
     )
     storage.new(event_volunteer)
+
+    # Create a new notification for the volunteer
+    notification_message = f"Registered for: {event.title}"
+    notification = Notification(
+        volunteer_id=volunteer_id,
+        message=notification_message,
+        status="unread"
+    )
+    storage.new(notification)
+
     storage.save()
 
     flash('Successfully registered for the event!', 'success')
@@ -56,6 +66,17 @@ def unregister_event(event_id):
 
     # Delete the record
     storage.delete(event_volunteer)
+
+    # Create a new notification for the volunteer
+    event = storage.get_event_by_id(event_id)
+    notification_message = f"Unregistered from: {event.title}"
+    notification = Notification(
+        volunteer_id=volunteer_id,
+        message=notification_message,
+        status="unread"
+    )
+    storage.new(notification)
+    
     storage.save()
 
     flash('Successfully unregistered from the event.', 'success')

@@ -20,6 +20,7 @@ def display_dashboard():
     upcoming_events = storage.get_user_events(current_user_id)
     hours = storage.get_user_hours(current_user_id)
     notifications = storage.get_user_notifications(current_user_id)
+    sorted_notifications = sorted(notifications, key=lambda n: n.created_at, reverse=True)
 
     # Process events to format date and time correctly
     processed_events = []
@@ -46,10 +47,11 @@ def display_dashboard():
             print(f"Error processing event {event.id}: {e}")
 
     return render_template('volunteer-dashboard.html',
+                           cache_id=uuid4(),
                            user=user,
                            events=processed_events,
                            hours=hours,
-                           notifications=notifications)
+                           notifications=sorted_notifications)
 
 
 @web_views.route('/creator_dashboard', methods=['GET'], strict_slashes=False)
@@ -88,6 +90,7 @@ def creator_dashboard():
     event_volunteers = {event['id']: storage.get_volunteers_for_event(event['id']) for event in processed_events}
 
     return render_template('creator-dashboard.html',
+                           cache_id=uuid4(),
                            user=user,
                            events=processed_events,
                            event_volunteers=event_volunteers)
